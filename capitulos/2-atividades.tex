@@ -78,7 +78,7 @@ Na sequência, foi realizado o levantamento dos requisitos técnicos, divididos 
 	}
 	\textbf{Referência} & \textbf{Requisito} & \textbf{Descrição}\\
 	RNF01 & Verificação de documentos pessoais~ & Validar se os documentos cadastrados na plataforma são válidos.\\
-	RNF02 & Consulta veicular & Consultar se os dados do veículo informados pelo usuário estão cadastrados na base de dados do departamento de trânsito\\
+	RNF02 & Consulta veicular & Consultar se os dados do veículo informados pelo usuário estão cadastrados na base de dados do departamento de trânsito.\\
 	RNF03 & Pesquisa de antecedentes criminais & A funcionalidade poderia aumentar a segurança do usuário.\\
 	RNF04 & Ranking de confiança & Os usuários com a melhor pontuação poderiam ter privilégios de divulgação ao oferecer ou solicitar uma carona.\\
 	RNF05 & Pagamentos & Serviços de pagamento com o objetivo de monetizar a aplicação, além da possibilidade de motoristas lucrarem de forma justa.~\\
@@ -263,8 +263,8 @@ O Dicionário de Dados é uma utilizada em projetos acadêmicos e de desenvolvim
 	eh\_motorista & BOOLEAN & Diferencia o usuário do motorista.\\
 	ativo & BOOLEAN & Salva a informação se o usuário é ativo.\\
 	licenca & VARCHAR~ & Número da CNH, salvo quando o motorista é registrado no sistema.\\
-	(FK) fk\_avaliação & VARCHAR~ & Chave estrangeira, referencia a tabela "avaliações".\\
-	(FK) fk\_endereço & VARCHAR & Chave estrangeira, referencia a tabela "endereços".
+	(FK) fk\_avaliação & VARCHAR~ & Chave estrangeira, referencia a tabela “avaliações”.\\
+	(FK) fk\_endereço & VARCHAR & Chave estrangeira, referencia a tabela “endereços”.
 \end{longtblr}
 
 
@@ -288,8 +288,8 @@ O Dicionário de Dados é uma utilizada em projetos acadêmicos e de desenvolvim
 	}
 	\textbf{REALIZA} &                        &                                                   \\
 	\textbf{NOME}    & \textbf{TIPO DE DADOS} & \textbf{DESCRIÇÃO}                                \\
-	(FK) reserva     & VARCHAR                & Chave estrangeira, referência à tabela “reservas” \\
-	(FK) usuario     & VARCHAR                & Chave estrangeira, referência à tabela “usuarios”  
+	(FK) reserva     & VARCHAR                & Chave estrangeira, referência à tabela “reservas”. \\
+	(FK) usuario     & VARCHAR                & Chave estrangeira, referência à tabela “usuarios”.  
 \end{longtblr}
 
 
@@ -317,10 +317,10 @@ O Dicionário de Dados é uma utilizada em projetos acadêmicos e de desenvolvim
 	}
 	\textbf{TROCA~} &                        &                                                                                                                  \\
 	\textbf{NOME}   & \textbf{TIPO DE DADOS} & \textbf{DESCRIÇÃO}                                                                                               \\
-	(PK) id\_troca~ & VARCHAR                & Chave primária, identificador único da tabela troca. Identifica as trocas de mensagens entre usuário e motorista \\
-	(FK) usuario    & VARCHAR                & Chave estrangeira, referência à tabela “usuarios                                                                  \\
-	(FK) motorista  & VARCHAR                & Chave estrangeira, referência à tabela “motoristas”                                                               \\
-	(FK) mensagem   & VARCHAR                & Chave estrangeira, referência à tabela “mensagens”~                                                               
+	(PK) id\_troca~ & VARCHAR                & Chave primária, identificador único da tabela troca. Identifica as trocas de mensagens entre usuário e motorista. \\
+	(FK) usuario    & VARCHAR                & Chave estrangeira, referência à tabela “usuarios”.                                                                  \\
+	(FK) motorista  & VARCHAR                & Chave estrangeira, referência à tabela “motoristas”.                                                               \\
+	(FK) mensagem   & VARCHAR                & Chave estrangeira, referência à tabela “mensagens”.~                                                               
 \end{longtblr}
 
 
@@ -346,9 +346,9 @@ O Dicionário de Dados é uma utilizada em projetos acadêmicos e de desenvolvim
 	}
 	\textbf{MENSAGENS}    &                        &                                                 \\
 	\textbf{NOME}         & \textbf{TIPO DE DADOS} & \textbf{DESCRIÇÃO}                              \\
-	{(PK) \\id\_mensagem} & VARCHAR                & Chave primária, identificador único da mensagem \\
-	conteudo              & TEXT                   & armazena o conteúdo das mensagens trocadas      \\
-	data\_envio           & dateTime               & data do envio da mensagem~                      
+	{(PK) \\id\_mensagem} & VARCHAR                & Chave primária, identificador único da mensagem. \\
+	conteudo              & TEXT                   & Armazena o conteúdo das mensagens trocadas.      \\
+	data\_envio           & DATETIME               & Data do envio da mensagem.~                      
 \end{longtblr}
 
 
@@ -372,8 +372,8 @@ O Dicionário de Dados é uma utilizada em projetos acadêmicos e de desenvolvim
 	}
 	\textbf{PERTENCE} &                        &                                                  \\
 	\textbf{NOME}     & \textbf{TIPO DE DADOS} & \textbf{DESCRIÇÃO}                               \\
-	{(FK)\\mensagem}  & VARCHAR                & Chave estrangeira,referência à tabela “mensagem” \\
-	{(FK)\\~viagem}   & VARCHAR                & Chave estrangeira,referência à tabela “viagens”  
+	{(FK)\\mensagem}  & VARCHAR                & Chave estrangeira, referência à tabela “mensagem”. \\
+	{(FK)\\~viagem}   & VARCHAR                & Chave estrangeira, referência à tabela “viagens”.  
 \end{longtblr}
 
 % Tabela VIAGENS
@@ -423,17 +423,17 @@ O Dicionário de Dados é uma utilizada em projetos acadêmicos e de desenvolvim
 	\textbf{VIAGENS} &  & \\
 	\textbf{NOME} & \textbf{TIPO DE DADOS} & \textbf{DESCRIÇÃO}\\
 	status & ENUM & Armazena os possíveis status da corrida, variando entre agendado, em andamento,concluído ou cancelado.\\
-	{data\_criacao} & dateTime & Data da criação da corrida~\\
+	{data\_criacao} & DATETIME & Data da criação da corrida.~\\
 	preco & DECIMAL & Preço da corrida, quando aplicável a monetização da mesma.\\
-	{hora\_termino} & dateTime & Registra a hora que a corrida acaba.\\
+	{hora\_termino} & DATETIME & Registra a hora que a corrida acaba.\\
 	{preferencias} & VARCHAR & Preferências da corrida definidas pelos participantes antes do seu início.\\
-	{data\_atualizacao} & dateTime & Data de atualização mais recente da viagem.\\
-	{hora\_partida} & dateTime & Define a hora de início de uma viagem.\\
+	{data\_atualizacao} & DATETIME & Data de atualização mais recente da viagem.\\
+	{hora\_partida} & DATETIME & Define a hora de início de uma viagem.\\
 	{lugares\\\_disponiveis} & INT & Armazena a quantidade de assentos disponíveis para os passageiros de acordo com o veículo cadastrado pelo motorista.\\
 	{(PK) \\idviagem} & VARCHAR & Chave primária, identificador da tabela viagem.\\
-	{(FK)\\motorista} & VARCHAR & Chave estrangeira, referência à tabela ``motoristas''.\\
+	{(FK)\\motorista} & VARCHAR & Chave estrangeira, referência à tabela ``motoristas''.\\ 
 	{(FK) \\reservas} & VARCHAR & Chave estrangeira, referência à tabela ``reservas''.\\
-	{(FK) \\avaliacao} & VARCHAR & Chave estrangeira, referência à tabela ``avaliações".\\
+	{(FK) \\avaliacao} & VARCHAR & Chave estrangeira, referência à tabela ``avaliações''.\\
 	{(FK) \\endereco} & VARCHAR & Chave estrangeira, referência à tabela ``endereços''.\\
 	{(FK) \\veiculo} & VARCHAR & Chave estrangeira, referência à tabela ``veículos''.\\
 	{(FK) \\usuario} & VARCHAR & Chave estrangeira, referência à tabela ``Usuários''.
@@ -470,7 +470,7 @@ O Dicionário de Dados é uma utilizada em projetos acadêmicos e de desenvolvim
 	\textbf{RESERVAS} &  & \\
 	\textbf{NOME} & \textbf{TIPO DE DADOS} & \textbf{DESCRIÇÃO}\\
 	{(PK) \\idreserva} & VARCHAR & Chave primária, identificador único da reserva.\\
-	{hora\_reserva} & dateTime & Hora de realização da reserva.\\
+	{hora\_reserva} & DATETIME & Hora de realização da reserva.\\
 	{data\_criacao} & DATE & Armazena a data da criação no momento em que a reserva é feita.~\\
 	{data\\\_atualizacao} & DATE & Data da última atualização da reserva.\\
 	status & ENUM & Armazena os possíveis status da reserva, variando entre agendado, em andamento,concluído ou cancelado.\\
@@ -506,11 +506,11 @@ O Dicionário de Dados é uma utilizada em projetos acadêmicos e de desenvolvim
 	\textbf{AVALIAÇÕES} &  & \\
 	\textbf{NOME} & \textbf{TIPO DE DADOS} & \textbf{DESCRIÇÃO}\\
 	nota & INT & Numeral de 1 a 5 representando a nota da avaliação.\\
-	{data\\\_envio} & dateTime & {Data de envio do registro\textbf{}\\\textbf{}}\\
+	{data\\\_envio} & DATETIME & {Data de envio do registro.\textbf{}\\\textbf{}}\\
 	comentario & TEXT & Mensagem de avaliação do usuário.~\\
 	{(PK) \\idAvaliacao} & VARCHAR & Chave primária, identificador único da avaliação.\\
-	{data\\\_criacao} & dateTime & Data de criação do registro.\\
-	{data\\\_atualizacao} & dateTime & Data da modificação mais recente.
+	{data\\\_criacao} & DATETIME & Data de criação do registro.\\
+	{data\\\_atualizacao} & DATETIME & Data da modificação mais recente.
 \end{longtblr}
 
 
@@ -544,14 +544,14 @@ O Dicionário de Dados é uma utilizada em projetos acadêmicos e de desenvolvim
 	}
 	\textbf{ENDEREÇOS} &  & \\
 	\textbf{NOME} & \textbf{TIPO DE DADOS} & \textbf{\textbf{DESCRIÇÃO}}\\
-	{(PK)\\idEndereco} & VARCHAR & Chave primária, identificador único do endereço\\
-	cidade & VARCHAR & Nome da cidade\\
+	{(PK)\\idEndereco} & VARCHAR & Chave primária, identificador único do endereço.\\
+	cidade & VARCHAR & Nome da cidade.\\
 	longitude & REAL & coordenada que especifica a posição geográfica da posição norte-sul de uma cidade específica. É de suma importância nas requisições.\\
 	latitude & REAL & coordenada geográfica que especifica a posição leste–oeste de uma cidade específica. É de suma importância nas requisições.\\
 	{endereco\\\_formatado} & VARCHAR & Nome formatado do endereço. Importante para a precisão das pesquisas, uma vez que algumas localizações possuem nomes populares, não registrados pelos serviços de geolocalização.\\
 	ativo & BOOLEAN & Salva a informação se o endereço é ativo.\\
-	{data\\\_criacao} & dateTime & Data de criação do registro.\\
-	{data\\\_atualizacao} & dateTime & Data da última atualização.
+	{data\\\_criacao} & DATETIME & Data de criação do registro.\\
+	{data\\\_atualizacao} & DATETIME & Data da última atualização.
 \end{longtblr}
 
 
@@ -575,8 +575,8 @@ O Dicionário de Dados é uma utilizada em projetos acadêmicos e de desenvolvim
 	}
 	\textbf{REGISTRA} &  & \\
 	\textbf{NOME} & \textbf{TIPO DE DADOS} & \textbf{DESCRIÇÃO}\\
-	{(FK)\\veiculo} & VARCHAR & Chave estrangeira, referência à tabela "veículos".\\
-	{(FK) \\motorista} & VARCHAR & Chave estrangeira, referência à tabela "usuários".
+	{(FK)\\veiculo} & VARCHAR & Chave estrangeira, referência à tabela ``veículos''.\\
+	{(FK) \\motorista} & VARCHAR & Chave estrangeira, referência à tabela ``usuários''.
 \end{longtblr}
 
 
@@ -618,15 +618,15 @@ O Dicionário de Dados é uma utilizada em projetos acadêmicos e de desenvolvim
 	}
 	\textbf{VEÍCULOS} &  & \\
 	\textbf{NOME} & \textbf{TIPO DE DADOS} & \textbf{DESCRIÇÃO}\\
-	modelo & VARCHAR & Descreve o modelo do veículo~\\
-	marca & VARCHAR & Descreve a marca do veículo\\
-	data\_criacao & dateTime & Data de cadastro do veículo.\\
+	modelo & VARCHAR & Descreve o modelo do veículo.~\\
+	marca & VARCHAR & Descreve a marca do veículo.\\
+	data\_criacao & DATETIME & Data de cadastro do veículo.\\
 	capacidade & INT & Quantidade máxima de passageiros que o veículo registrado deve possuir.\\
-	cor & VARCHAR & Cor do veículo\\
-	data\_atualizacao & dateTime & data da última alteração dos dados do veículo.~\\
-	placa & VARCHAR & Salva o número da placa do veículo após o seu registo.\\
-	ano & DATE & Ano de fabricação do veículo\\
-	{(PK) \\idVeiculo} & VARCHAR & Chave primária, identificador único do veículo\\
+	cor & VARCHAR & Cor do veículo.\\
+	data\_atualizacao & DATETIME & data da última alteração dos dados do veículo.~\\
+	placa & VARCHAR & Salva o número da placa do veículo após o seu registro.\\
+	ano & DATE & Ano de fabricação do veículo.\\
+	{(PK) \\idVeiculo} & VARCHAR & Chave primária, identificador único do veículo.\\
 	ativo & BOOLEAN & Verifica se o veículo ainda está ativo na aplicação ou não.
 \end{longtblr}
 
@@ -638,7 +638,7 @@ O Dicionário de Dados é uma utilizada em projetos acadêmicos e de desenvolvim
 	\item \textbf{Motoristas - Veículos}
 	\begin{itemize}
 		\item (1,N): Cada motorista pode possuir vários veículos.
-		\item (1,N): Um veículo pode ser associado a vários motoristas ao longo do tempo.
+		\item (1,1): Um veículo pode ser associado a um único motorista.
 	\end{itemize}
 	
 	\item \textbf{Motoristas - Viagens}
