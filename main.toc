@@ -1,0 +1,49 @@
+\changetocdepth {4}
+\babel@toc {brazil}{}\relax 
+\babel@toc {brazil}{}\relax 
+\setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
+\setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
+\contentsline {chapter}{\chapternumberline {1}\MakeTextUppercase []{INTRODUÇÃO}}{4}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Contextualização}{4}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Objetivos}{6}{section.1.2}%
+\contentsline {section}{\numberline {1.3}Público-alvo e Benefícios}{7}{section.1.3}%
+\setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
+\contentsline {chapter}{\chapternumberline {2}\MakeTextUppercase []{ATIVIDADES DESENVOLVIDAS}}{8}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Escopo do Projeto}{8}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Organização Inicial}{8}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Requisitos Funcionais}{8}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.2}Critérios de Aceitação}{10}{subsection.2.2.2}%
+\contentsline {section}{\numberline {2.3}Back-end}{12}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}Arquitetura do \textit {Back-end}}{12}{subsection.2.3.1}%
+\contentsline {subsection}{\numberline {2.3.2}Banco de Dados}{13}{subsection.2.3.2}%
+\contentsline {subsection}{\numberline {2.3.3}Diagrama Entidade-Relacionamento (MER)}{13}{subsection.2.3.3}%
+\contentsline {subsection}{\numberline {2.3.4}Modelo Entidade-Relacionamento (DER)}{13}{subsection.2.3.4}%
+\contentsline {subsection}{\numberline {2.3.5}Dicionário de Dados}{13}{subsection.2.3.5}%
+\contentsline {subsection}{\numberline {2.3.6}Relacionamentos}{19}{subsection.2.3.6}%
+\contentsline {section}{\numberline {2.4}Front-end}{20}{section.2.4}%
+\contentsline {subsection}{\numberline {2.4.1}Arquitetura do Front-End}{21}{subsection.2.4.1}%
+\contentsline {subsection}{\numberline {2.4.2}Design e UX (Experiência do Usuário)}{21}{subsection.2.4.2}%
+\contentsline {subsection}{\numberline {2.4.3}Componentização e Reutilização}{21}{subsection.2.4.3}%
+\contentsline {subsection}{\numberline {2.4.4}Diagrama de Classes}{21}{subsection.2.4.4}%
+\contentsline {subsection}{\numberline {2.4.5}Diagrama de Caso de Uso}{21}{subsection.2.4.5}%
+\contentsline {section}{\numberline {2.5}Tecnologias e Ferramentas}{21}{section.2.5}%
+\contentsline {subsection}{\numberline {2.5.1}Ambiente de Trabalho}{21}{subsection.2.5.1}%
+\contentsline {subsection}{\numberline {2.5.2}Linguagem de Programação}{21}{subsection.2.5.2}%
+\contentsline {subsection}{\numberline {2.5.3}\textit {Framework}}{22}{subsection.2.5.3}%
+\contentsline {subsection}{\numberline {2.5.4}Banco de Dados}{22}{subsection.2.5.4}%
+\contentsline {subsection}{\numberline {2.5.5}Produtividade}{22}{subsection.2.5.5}%
+\setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
+\contentsline {chapter}{\chapternumberline {3}\MakeTextUppercase []{CONSIDERAÇÕES FINAIS}}{23}{chapter.3}%
+\vspace {\cftbeforechapterskip }
+\setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
+\contentsline {chapter}{\MakeTextUppercase []{Refer\^encias}}{24}{section*.5}%
+\cftinsert {AAA}
+\renewcommand *{\cftappendixname }{ANEXO \space }
+\setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
+\setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
+\cftinsert {A}
+\contentsline {appendix}{\chapternumberline {A}\MakeTextUppercase []{MODELO ENTIDADE-RELACIONAMENTO (MER)}}{25}{appendix.anexochapback.1}%
+\setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
+\setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
+\cftinsert {A}
+\contentsline {appendix}{\chapternumberline {B}\MakeTextUppercase []{DIAGRAMA ENTIDADE-RELACIONAMENTO (DER)}}{27}{appendix.anexochapback.2}%

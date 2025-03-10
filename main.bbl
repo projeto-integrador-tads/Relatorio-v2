@@ -1,0 +1,76 @@
+\providecommand{\abntreprintinfo}[1]{%
+ \citeonline{#1}}
+\setlength{\labelsep}{0pt}\begin{thebibliography}{}
+\providecommand{\abntrefinfo}[3]{}
+\providecommand{\abntbstabout}[1]{}
+\abntbstabout{v-1.9.7 }
+
+\bibitem[Gerais 2024]{lancaValeDoLitio}
+\abntrefinfo{Gerais}{GERAIS}{2024}
+{GERAIS, G. de M. \emph{Governo de Minas lança em Nova Iorque projeto Vale do
+  Lítio}. 2024. Agência Minas.
+Dispon{\'\i}vel em:
+  \url{https://www.agenciaminas.mg.gov.br/multimidia/galeria/governo-de-minas-lanca-em-nova-iorque-projeto-vale-do-litio}.
+  Acesso em: 17 set 2024.}
+
+\bibitem[IBGE 2022]{ibgePopulacao2022}
+\abntrefinfo{IBGE}{IBGE}{2022}
+{IBGE. \emph{População no último Censo}. 2022. IBGE.
+Dispon{\'\i}vel em:
+  \url{https://cidades.ibge.gov.br/brasil/mg/aracuai/panoram}. Acesso em: 16
+  set 2024.}
+
+\bibitem[Jaganmohan 2024]{demandaLitio}
+\abntrefinfo{Jaganmohan}{JAGANMOHAN}{2024}
+{JAGANMOHAN, M. \emph{Lithium global demand forecast 2025}. 2024. Statista.
+Dispon{\'\i}vel em:
+  \url{https://www.statista.com/statistics/452025/projected-total-demand-for-lithium-globally/}.
+  Acesso em: 17 set 2024.}
+
+\bibitem[Le{\'o}n 2024]{agenciaBrasil}
+\abntrefinfo{Le{\'o}n}{LE{\'O}N}{2024}
+{LE{\'O}N, L.~P. \emph{N{\'\i}quel, l{\'\i}tio e sat{\'e}lites: conhe{\c c}a
+  interesses de Musk no Brasil}. 2024. Ag{\^e}ncia Brasil.
+Dispon{\'\i}vel em:
+  \url{https://agenciabrasil.ebc.com.br/economia/noticia/2024-04/niquel-litio-e-satelites-conheca-interesses-de-musk-no-brasil}.
+  Acesso em: 25 set 2024.}
+
+\bibitem[Mineração 2024]{GrotadoCirilo}
+\abntrefinfo{Mineração}{MINERAçãO}{2024}
+{MINERAçãO, R. \emph{Grota do Cirilo é 4º maior complexo industrial de
+  beneficiamento de lítio no mundo}. 2024. Revista Mineração.
+Dispon{\'\i}vel em:
+  \url{https://revistamineracao.com.br/2024/02/02/grota-do-cirilo-quarto-maior-complexo-beneficiamento-litio-mundo/}.
+  Acesso em: 17 set 2024.}
+
+\bibitem[SEDE-MG 2023]{EnviaLitio}
+\abntrefinfo{SEDE-MG}{SEDE-MG}{2023}
+{SEDE-MG. \emph{Minas Gerais começa o envio de lítio do Vale do Jequitinhonha
+  para fora do Brasil}. 2023. SEDEMG.
+Dispon{\'\i}vel em:
+  \url{https://desenvolvimento.mg.gov.br/inicio/noticias/noticia/2206/minas-gerais-comeca-o-envio-de-litio-do-vale-do-jequitinhonha-para-fora-do-brasil\#:~:text=Nesta\%20quinta\%2Dfeira\%20(27/7)\%2C\%20o\%20embarque\%20das\%20primeiras,Ara\%C3\%A7ua\%C3\%AD\%2C\%20esse\%20mineral\%20\%C3\%A9\%20utilizado\%20em\%20aplica\%C3\%A7\%C3\%B5es}.
+  Acesso em: 17 set 2024.}
+
+\bibitem[Transportes 2023]{FrotaVeiculos2023}
+\abntrefinfo{Transportes}{TRANSPORTES}{2023}
+{TRANSPORTES, M. dos. \emph{Frota de Veículos 2023 - gov.br}. 2023.
+  Ministério dos Transportes.
+Dispon{\'\i}vel em:
+  \url{https://www.gov.br/transportes/pt-br/assuntos/transito/conteudo-Senatran/frota-de-veiculos-2023}.
+  Acesso em: 18 set 2024.}
+
+\bibitem[Vasconcelos 2024]{BrasildeFatoProblemadaMineracao}
+\abntrefinfo{Vasconcelos}{VASCONCELOS}{2024}
+{VASCONCELOS, A.~C. \emph{Comunidades do Vale do Jequitinhonha denunciam
+  violações de direitos com a mineração de lítio}. 2024. Brasil de Fato -
+  Minas Gerais.
+Dispon{\'\i}vel em: \url{https://bit.ly/3BjQIKz}. Acesso em: 17 set 2024.}
+
+\bibitem[Xavier 2024]{reportagemDiviNews}
+\abntrefinfo{Xavier}{XAVIER}{2024}
+{XAVIER, V. \emph{Com reajuste de 8\% nas passagens intermunicipais em Minas,
+  alternativa pode ser ônibus por aplicativo ou caronas combinadas}. 2024.
+  DiviNews.
+Dispon{\'\i}vel em: \url{https://bit.ly/3XDw0Nd}. Acesso em: 17 set 2024.}
+
+\end{thebibliography}
