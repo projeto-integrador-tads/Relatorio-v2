@@ -19,18 +19,18 @@
 \contentsline {subsection}{\numberline {2.3.3}Diagrama Entidade-Relacionamento (MER)}{13}{subsection.2.3.3}%
 \contentsline {subsection}{\numberline {2.3.4}Modelo Entidade-Relacionamento (DER)}{13}{subsection.2.3.4}%
 \contentsline {subsection}{\numberline {2.3.5}Dicionário de Dados}{13}{subsection.2.3.5}%
-\contentsline {subsection}{\numberline {2.3.6}Relacionamentos}{19}{subsection.2.3.6}%
+\contentsline {subsection}{\numberline {2.3.6}Relacionamentos}{18}{subsection.2.3.6}%
 \contentsline {section}{\numberline {2.4}Front-end}{20}{section.2.4}%
-\contentsline {subsection}{\numberline {2.4.1}Arquitetura do Front-End}{21}{subsection.2.4.1}%
-\contentsline {subsection}{\numberline {2.4.2}Design e UX (Experiência do Usuário)}{21}{subsection.2.4.2}%
-\contentsline {subsection}{\numberline {2.4.3}Componentização e Reutilização}{22}{subsection.2.4.3}%
-\contentsline {subsection}{\numberline {2.4.4}Diagrama de Classes}{22}{subsection.2.4.4}%
+\contentsline {subsection}{\numberline {2.4.1}Arquitetura do Front-End}{20}{subsection.2.4.1}%
+\contentsline {subsection}{\numberline {2.4.2}Design e UX (Experiência do Usuário)}{20}{subsection.2.4.2}%
+\contentsline {subsection}{\numberline {2.4.3}Componentização e Reutilização}{21}{subsection.2.4.3}%
+\contentsline {subsection}{\numberline {2.4.4}Diagrama de Classes}{21}{subsection.2.4.4}%
 \contentsline {subsection}{\numberline {2.4.5}Diagrama de Caso de Uso}{22}{subsection.2.4.5}%
-\contentsline {section}{\numberline {2.5}Tecnologias e Ferramentas}{23}{section.2.5}%
-\contentsline {subsection}{\numberline {2.5.1}Ambiente de Trabalho}{23}{subsection.2.5.1}%
+\contentsline {section}{\numberline {2.5}Tecnologias e Ferramentas}{22}{section.2.5}%
+\contentsline {subsection}{\numberline {2.5.1}Ambiente de Trabalho}{22}{subsection.2.5.1}%
 \contentsline {subsection}{\numberline {2.5.2}Linguagem de Programação}{23}{subsection.2.5.2}%
-\contentsline {subsection}{\numberline {2.5.3}\textit {Framework}}{24}{subsection.2.5.3}%
-\contentsline {subsection}{\numberline {2.5.4}Banco de Dados}{24}{subsection.2.5.4}%
+\contentsline {subsection}{\numberline {2.5.3}\textit {Framework}}{23}{subsection.2.5.3}%
+\contentsline {subsection}{\numberline {2.5.4}Banco de Dados}{23}{subsection.2.5.4}%
 \contentsline {subsection}{\numberline {2.5.5}Produtividade}{24}{subsection.2.5.5}%
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
 \contentsline {chapter}{\chapternumberline {3}\MakeTextUppercase []{CONSIDERAÇÕES FINAIS}}{25}{chapter.3}%

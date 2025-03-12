@@ -251,26 +251,39 @@ O Dicionário de Dados é uma utilizada em projetos acadêmicos e de desenvolvim
 	}
 	\textbf{Usuários} &  & \\
 	\textbf{NOME} & \textbf{TIPO DE DADOS} & \textbf{DESCRIÇÃO}\\
+	
+	{(PK)\\id\_usuario} & VARCHAR & Chave primaria Identificador único da tabela ``usuarios''.\\
+	
 	nome & VARCHAR & Nome do usuário.\\
-	senha & VARCHAR~ & {Senha forte, com no mínimo 8 caracteres, incluindo\\letras maiusculas, minúsculas, números e caracteres\\especiais.}\\
+	
 	segundo\_nome & VARCHAR & Sobrenome do usuário.\\
+	
 	email & VARCHAR~ & E-mail único, utilizado para login.\\
-	data\_criacao & DATE & Armazena a data da criação do perfil.\\
+	
+	senha & VARCHAR~ & {Senha forte, com no mínimo 8 caracteres, incluindo\\letras maiusculas, minúsculas, números e caracteres\\especiais.}\\
+	
+	telefone & VARCHAR & Número de telefone válido.\\
+	
 	foto\_perfil & VARCHAR~ & Caminho para a foto de perfil do usuário.\\
-	data\_atualizacao & DATE & Ultima atualização do usuário.\\
-	telefone & VARCHAR & Número de telefone válido.~\\
-	(PK) idusuario & VARCHAR & Chave primária, identificador único do usuário.\\
+	
 	eh\_motorista & BOOLEAN & Diferencia o usuário do motorista.\\
+	
 	ativo & BOOLEAN & Salva a informação se o usuário é ativo.\\
-	licenca & VARCHAR~ & Número da CNH, salvo quando o motorista é registrado no sistema.\\
-	(FK) fk\_avaliação & VARCHAR~ & Chave estrangeira, referencia a tabela “avaliações”.\\
-	(FK) fk\_endereço & VARCHAR & Chave estrangeira, referencia a tabela “endereços”.
+	
+	{classificacao\\\_media} & DOUBLE & Nota média do usuário.\\
+	
+	data\_criacao & DATE & Armazena a data da criação do perfil.\\
+	
+	data\_atualizacao & DATE & Ultima atualização do usuário.\\
+	
+
 \end{longtblr}
 
 
-% Tabela REALIZA --
+
+% Tabela TOKEN
 \begin{longtblr}[
-	caption = {Descrição da Entidade Realiza.},
+	caption = {Descrição da Entidade Token.},
 	label = {tab:requisitos},
 	entry = none,
 	]{
@@ -278,32 +291,7 @@ O Dicionário de Dados é uma utilizada em projetos acadêmicos e de desenvolvim
 		colspec = {Q[190]Q[160]Q[620]},
 		row{1} = {c},
 		row{2} = {c},
-		cell{1}{1} = {c=3}{0.942\linewidth},
-		cell{3}{1} = {c},
-		cell{3}{2} = {c},
-		cell{4}{1} = {c},
-		cell{4}{2} = {c},
-		hlines,
-		vlines,
-	}
-	\textbf{REALIZA} &                        &                                                   \\
-	\textbf{NOME}    & \textbf{TIPO DE DADOS} & \textbf{DESCRIÇÃO}                                \\
-	(FK) reserva     & VARCHAR                & Chave estrangeira, referência à tabela “reservas”. \\
-	(FK) usuario     & VARCHAR                & Chave estrangeira, referência à tabela “usuarios”.  
-\end{longtblr}
-
-
-% Tabela TROCA
-\begin{longtblr}[
-	caption = {Descrição da Entidade Troca.},
-	label = {tab:requisitos},
-	entry = none,
-	]{
-		width = \linewidth,
-		colspec = {Q[190]Q[160]Q[620]},
-		row{1} = {c},
-		row{2} = {c},
-		cell{1}{1} = {c=3}{0.94\linewidth},
+		cell{1}{1} = {c=3}{0.938\linewidth},
 		cell{3}{1} = {c},
 		cell{3}{2} = {c},
 		cell{4}{1} = {c},
@@ -312,15 +300,24 @@ O Dicionário de Dados é uma utilizada em projetos acadêmicos e de desenvolvim
 		cell{5}{2} = {c},
 		cell{6}{1} = {c},
 		cell{6}{2} = {c},
+		cell{7}{1} = {c},
+		cell{7}{2} = {c},
+		cell{8}{1} = {c},
+		cell{8}{2} = {c},
 		hlines,
 		vlines,
 	}
-	\textbf{TROCA~} &                        &                                                                                                                  \\
-	\textbf{NOME}   & \textbf{TIPO DE DADOS} & \textbf{DESCRIÇÃO}                                                                                               \\
-	(PK) id\_troca~ & VARCHAR                & Chave primária, identificador único da tabela troca. Identifica as trocas de mensagens entre usuário e motorista. \\
-	(FK) usuario    & VARCHAR                & Chave estrangeira, referência à tabela “usuarios”.                                                                  \\
-	(FK) motorista  & VARCHAR                & Chave estrangeira, referência à tabela “motoristas”.                                                               \\
-	(FK) mensagem   & VARCHAR                & Chave estrangeira, referência à tabela “mensagens”.~                                                               
+	\textbf{Token} &  & \\
+	\textbf{NOME} & \textbf{TIPO DE DADOS} & \textbf{DESCRIÇÃO}\\
+	
+	{(PK)\\id\_token} & VARCHAR & Chave primária, identificador único da tabela ``token''. ~\\
+	
+	token   &    VARCHAR   &   Armazena o token único gerado para a solicitação de recuperação de senha. \\
+	
+	{expiracao\_em} & DATETIME &  Armazena a data e hora em que o token expira.~\\
+	
+	{(FK)\_usuarios}  & VARCHAR   &  Chave estrangeira, referência à tabela ``usuarios''.
+	
 \end{longtblr}
 
 
@@ -344,37 +341,23 @@ O Dicionário de Dados é uma utilizada em projetos acadêmicos e de desenvolvim
 		hlines,
 		vlines,
 	}
-	\textbf{MENSAGENS}    &                        &                                                 \\
+	\textbf{MENSAGENS}    &                        &                                                \\
 	\textbf{NOME}         & \textbf{TIPO DE DADOS} & \textbf{DESCRIÇÃO}                              \\
+	
 	{(PK) \\id\_mensagem} & VARCHAR                & Chave primária, identificador único da mensagem. \\
-	conteudo              & TEXT                   & Armazena o conteúdo das mensagens trocadas.      \\
-	data\_envio           & DATETIME               & Data do envio da mensagem.~                      
+	
+	conteudo              & VARCHAR                & Armazena o conteúdo das mensagens trocadas.       \\
+	
+	data\_envio           & DATETIME               & Data do envio da mensagem.~                       \\
+	
+	{(FK)\\remetente}     & VARCHAR                & Chave estrangeira.~                                \\
+	
+	{(FK)\\viagens}       & VARCHAR                & Chave estrangeira.~                                 \\
+	
+	{(FK)\\destinatario}  & VARCHAR                & Chave estrangeira.~
+	                      
 \end{longtblr}
 
-
-% Tabela PERTENCE
-\begin{longtblr}[
-	caption = {Descrição da Entidade Pertence.},
-	label = {tab:requisitos},
-	entry = none,
-	]{
-		width = \linewidth,
-		colspec = {Q[190]Q[160]Q[620]},
-		row{1} = {c},
-		row{2} = {c},
-		cell{1}{1} = {c=3}{0.939\linewidth},
-		cell{3}{1} = {c},
-		cell{3}{2} = {c},
-		cell{4}{1} = {c},
-		cell{4}{2} = {c},
-		hlines,
-		vlines,
-	}
-	\textbf{PERTENCE} &                        &                                                  \\
-	\textbf{NOME}     & \textbf{TIPO DE DADOS} & \textbf{DESCRIÇÃO}                               \\
-	{(FK)\\mensagem}  & VARCHAR                & Chave estrangeira, referência à tabela “mensagem”. \\
-	{(FK)\\~viagem}   & VARCHAR                & Chave estrangeira, referência à tabela “viagens”.  
-\end{longtblr}
 
 % Tabela VIAGENS
 \begin{longtblr}[
@@ -422,21 +405,33 @@ O Dicionário de Dados é uma utilizada em projetos acadêmicos e de desenvolvim
 	}
 	\textbf{VIAGENS} &  & \\
 	\textbf{NOME} & \textbf{TIPO DE DADOS} & \textbf{DESCRIÇÃO}\\
+	
+	{(PK) \\id\_viagem} & VARCHAR & Chave primária, identificador da tabela viagem.\\
+	
 	status & ENUM & Armazena os possíveis status da corrida, variando entre agendado, em andamento,concluído ou cancelado.\\
+	
 	{data\_criacao} & DATETIME & Data da criação da corrida.~\\
+	
 	preco & DECIMAL & Preço da corrida, quando aplicável a monetização da mesma.\\
+	
 	{hora\_termino} & DATETIME & Registra a hora que a corrida acaba.\\
+	
 	{preferencias} & VARCHAR & Preferências da corrida definidas pelos participantes antes do seu início.\\
+	
 	{data\_atualizacao} & DATETIME & Data de atualização mais recente da viagem.\\
+	
 	{hora\_partida} & DATETIME & Define a hora de início de uma viagem.\\
+	
 	{lugares\\\_disponiveis} & INT & Armazena a quantidade de assentos disponíveis para os passageiros de acordo com o veículo cadastrado pelo motorista.\\
-	{(PK) \\idviagem} & VARCHAR & Chave primária, identificador da tabela viagem.\\
-	{(FK)\\motorista} & VARCHAR & Chave estrangeira, referência à tabela ``motoristas''.\\ 
-	{(FK) \\reservas} & VARCHAR & Chave estrangeira, referência à tabela ``reservas''.\\
-	{(FK) \\avaliacao} & VARCHAR & Chave estrangeira, referência à tabela ``avaliações''.\\
-	{(FK) \\endereco} & VARCHAR & Chave estrangeira, referência à tabela ``endereços''.\\
+
+	{(FK) \\motorista} & VARCHAR & Chave estrangeira, referência à tabela ``motoristas''.\\ 
+	
+	{(FK) \\enderecos\\\_destino} & VARCHAR & Chave estrangeira.\\
+	
+	{(FK) \\enderecos\\\_partida} & VARCHAR & Chave estrangeira.\\
+	
 	{(FK) \\veiculo} & VARCHAR & Chave estrangeira, referência à tabela ``veículos''.\\
-	{(FK) \\usuario} & VARCHAR & Chave estrangeira, referência à tabela ``Usuários''.
+
 \end{longtblr}
 
 
@@ -469,12 +464,22 @@ O Dicionário de Dados é uma utilizada em projetos acadêmicos e de desenvolvim
 	}
 	\textbf{RESERVAS} &  & \\
 	\textbf{NOME} & \textbf{TIPO DE DADOS} & \textbf{DESCRIÇÃO}\\
-	{(PK) \\idreserva} & VARCHAR & Chave primária, identificador único da reserva.\\
-	{hora\_reserva} & DATETIME & Hora de realização da reserva.\\
-	{data\_criacao} & DATE & Armazena a data da criação no momento em que a reserva é feita.~\\
-	{data\\\_atualizacao} & DATE & Data da última atualização da reserva.\\
+	
+	{(PK)\\id\_reserva} & VARCHAR & Chave primária, identificador único da tabela ``reserva''.\\
+	
+	{data\_criacao} & DATETIME & Armazena a data da criação no momento em que a reserva é feita.~\\
+	
+	{data\\\_atualizacao}  & DATETIME  &                     \\
+	 
 	status & ENUM & Armazena os possíveis status da reserva, variando entre agendado, em andamento,concluído ou cancelado.\\
-	{status\\\_pagamento} & ENUM & Armazena os possíveis status de pagamento quando aplicável.
+	
+	{status\\\_pagamento} & ENUM & Armazena os possíveis status de pagamento quando aplicável. \\
+	
+	{(FK)\_passageiro}  & VARCHAR   &  ~ \\
+	
+	{(FK)\_viagens}  & VARCHAR   &  Chave estrangeira, referência à tabela ``viagens''. \\
+	
+	
 \end{longtblr}
 
 % Tabela AVALIACOES
@@ -505,12 +510,23 @@ O Dicionário de Dados é uma utilizada em projetos acadêmicos e de desenvolvim
 	}
 	\textbf{AVALIAÇÕES} &  & \\
 	\textbf{NOME} & \textbf{TIPO DE DADOS} & \textbf{DESCRIÇÃO}\\
-	nota & INT & Numeral de 1 a 5 representando a nota da avaliação.\\
-	{data\\\_envio} & DATETIME & {Data de envio do registro.\textbf{}\\\textbf{}}\\
-	comentario & TEXT & Mensagem de avaliação do usuário.~\\
-	{(PK) \\idAvaliacao} & VARCHAR & Chave primária, identificador único da avaliação.\\
+	
+	{(PK)\\id\_avaliacao} & VARCHAR & Chave primária, identificador único da avaliação.\\
+	
+	avaliacao & INT & Numeral de 1 a 5 representando a nota da avaliação.\\
+	
+	comentario & VARCHAR & Mensagem de avaliação do usuário.~\\
+
 	{data\\\_criacao} & DATETIME & Data de criação do registro.\\
-	{data\\\_atualizacao} & DATETIME & Data da modificação mais recente.
+	
+	{data\\\_atualizacao} & DATETIME & Data da modificação mais recente. \\
+
+	{(FK)\_avaliador}  &  VARCHAR  &    \\
+	
+	{(FK)\_viagens}  &  VARCHAR  &   Chave estrangeira, referência à tabela ``viagens''. \\
+	
+	{(FK)\_avaliado}  &  VARCHAR  &    
+	
 \end{longtblr}
 
 
@@ -544,39 +560,25 @@ O Dicionário de Dados é uma utilizada em projetos acadêmicos e de desenvolvim
 	}
 	\textbf{ENDEREÇOS} &  & \\
 	\textbf{NOME} & \textbf{TIPO DE DADOS} & \textbf{\textbf{DESCRIÇÃO}}\\
-	{(PK)\\idEndereco} & VARCHAR & Chave primária, identificador único do endereço.\\
+	
+	{(PK)\\id\_endereco} & VARCHAR & Chave primária, identificador único do endereço.\\
+	
 	cidade & VARCHAR & Nome da cidade.\\
-	longitude & REAL & coordenada que especifica a posição geográfica da posição norte-sul de uma cidade específica. É de suma importância nas requisições.\\
-	latitude & REAL & coordenada geográfica que especifica a posição leste–oeste de uma cidade específica. É de suma importância nas requisições.\\
+	
+	longitude & DOUBLE & coordenada que especifica a posição geográfica da posição norte-sul de uma cidade específica. É de suma importância nas requisições.\\
+	
+	latitude & VARCHAR & coordenada geográfica que especifica a posição leste–oeste de uma cidade específica. É de suma importância nas requisições.\\
+	
 	{endereco\\\_formatado} & VARCHAR & Nome formatado do endereço. Importante para a precisão das pesquisas, uma vez que algumas localizações possuem nomes populares, não registrados pelos serviços de geolocalização.\\
+	
 	ativo & BOOLEAN & Salva a informação se o endereço é ativo.\\
+	
 	{data\\\_criacao} & DATETIME & Data de criação do registro.\\
-	{data\\\_atualizacao} & DATETIME & Data da última atualização.
-\end{longtblr}
-
-
-% Tabela REGISTRA
-\begin{longtblr}[
-	caption = {Descrição da Entidade Registra.},
-	label = {tab:requisitos},
-	entry = none,
-	]{
-		width = \linewidth,
-		colspec = {Q[190]Q[160]Q[620]},
-		row{1} = {c},
-		row{2} = {c},
-		cell{1}{1} = {c=3}{0.94\linewidth},
-		cell{3}{1} = {c},
-		cell{3}{2} = {c},
-		cell{4}{1} = {c},
-		cell{4}{2} = {c},
-		hlines,
-		vlines,
-	}
-	\textbf{REGISTRA} &  & \\
-	\textbf{NOME} & \textbf{TIPO DE DADOS} & \textbf{DESCRIÇÃO}\\
-	{(FK)\\veiculo} & VARCHAR & Chave estrangeira, referência à tabela ``veículos''.\\
-	{(FK) \\motorista} & VARCHAR & Chave estrangeira, referência à tabela ``usuários''.
+	
+	{data\\\_atualizacao} & DATETIME & Data da última atualização. \\
+	
+	{(FK)\_usuarios} & VARCHAR & Chave estrangeria, referência a tabela ``usuarios''.
+	
 \end{longtblr}
 
 
@@ -618,16 +620,30 @@ O Dicionário de Dados é uma utilizada em projetos acadêmicos e de desenvolvim
 	}
 	\textbf{VEÍCULOS} &  & \\
 	\textbf{NOME} & \textbf{TIPO DE DADOS} & \textbf{DESCRIÇÃO}\\
-	modelo & VARCHAR & Descreve o modelo do veículo.~\\
-	marca & VARCHAR & Descreve a marca do veículo.\\
-	data\_criacao & DATETIME & Data de cadastro do veículo.\\
-	capacidade & INT & Quantidade máxima de passageiros que o veículo registrado deve possuir.\\
-	cor & VARCHAR & Cor do veículo.\\
+	
+	{(PK) \\id\_veiculo} & VARCHAR & Chave primária, identificador único do veículo.\\
+	
 	data\_atualizacao & DATETIME & data da última alteração dos dados do veículo.~\\
-	placa & VARCHAR & Salva o número da placa do veículo após o seu registro.\\
-	ano & DATE & Ano de fabricação do veículo.\\
-	{(PK) \\idVeiculo} & VARCHAR & Chave primária, identificador único do veículo.\\
-	ativo & BOOLEAN & Verifica se o veículo ainda está ativo na aplicação ou não.
+	
+	cor & VARCHAR & Cor do veículo.\\
+	
+	marca & VARCHAR & Descreve a marca do veículo.\\
+	
+	data\_criacao & DATETIME & Data de cadastro do veículo.\\
+	
+	ativo & BOOLEAN & Verifica se o veículo ainda está ativo na aplicação ou não. \\
+	
+	ano & INT & Ano de fabricação do veículo.\\
+	
+	placa & VARCHAR & Salva o número da placa do veículo após o seu registro.\\ 
+	
+	capacidade & INT & Quantidade máxima de passageiros que o veículo registrado deve possuir.\\
+	
+	modelo & VARCHAR & Descreve o modelo do veículo.~\\
+	
+	{(FK)\\\_proprietario}   &   VARCHAR   &   
+	
+	
 \end{longtblr}
 
 %Fim das tabelas 
@@ -635,70 +651,78 @@ O Dicionário de Dados é uma utilizada em projetos acadêmicos e de desenvolvim
 \subsection{Relacionamentos}
 
 \begin{enumerate}
-	\item \textbf{Motoristas - Veículos}
-	\begin{itemize}
-		\item (1,N): Cada motorista pode possuir vários veículos.
-		\item (1,1): Um veículo pode ser associado a um único motorista.
-	\end{itemize}
 	
-	\item \textbf{Motoristas - Viagens}
-	\begin{itemize}
-		\item (1,N): Um motorista pode criar várias viagens.
-		\item (0,1): Cada viagem é conduzida por um único motorista.
-	\end{itemize}
-	
-	\item \textbf{Viagens - Reservas}
-	\begin{itemize}
-		\item (1,N): Cada viagem pode ter várias reservas.
-		\item (0,1): Cada reserva está associada a uma única viagem.
-	\end{itemize}
 	
 	\item \textbf{Usuários - Reservas}
 	\begin{itemize}
 		\item (1,N): Um usuário pode fazer várias reservas.
-		\item (0,1): Cada reserva é feita por um único usuário.
-	\end{itemize}
-	
-	\item \textbf{Usuários - Endereços}
-	\begin{itemize}
-		\item (1,N): Um usuário pode ter vários endereços.
-		\item (0,1): Cada endereço pertence a um único usuário.
-	\end{itemize}
-	
-	\item \textbf{Viagens - Avaliações}
-	\begin{itemize}
-		\item (1,N): Cada viagem pode ter várias avaliações.
-		\item (0,1): Cada avaliação é feita para uma única viagem.
+		\item (1,1): Cada reserva é feita por um único usuário.
 	\end{itemize}
 	
 	\item \textbf{Usuários - Avaliações}
 	\begin{itemize}
 		\item (1,N): Um usuário pode fazer várias avaliações.
-		\item (0,1): Cada avaliação é feita por um único usuário.
-	\end{itemize}
+		\item (1,1): Cada avaliação é feita por um único usuário.
+	\end{itemize}	
 	
-	\item \textbf{Usuários - Mensagens}
+		\item \textbf{Usuários - Mensagens}
 	\begin{itemize}
 		\item (1,N): Um usuário pode enviar e receber várias mensagens.
-		\item (0,1): Cada mensagem tem um remetente e um destinatário únicos, podendo envolver diferentes usuários.
+		\item (1,1): Cada mensagem tem um remetente e um destinatário únicos, podendo envolver diferentes usuários.
+	\end{itemize}
+	
+		\item \textbf{Usuários - Endereços}
+	\begin{itemize}
+		\item (1,N): Um usuário pode ter vários endereços.
+		\item (1,1): Cada endereço pertence a um único usuário.
+	\end{itemize}
+	
+		\item \textbf{Usuários - Token}
+	\begin{itemize}
+		\item (1,N): Um usuário pode ter vários TokenJwtExpirado.
+		\item (1,1): Cada TokenJwtExpirado pertence a um único usuário.
+	\end{itemize}
+	
+	\item \textbf{Motoristas - Veículos}
+	\begin{itemize}
+		\item (1,N): Um motorista pode ter vários veículos.
+		\item (1,1): Cada veículo está associado a um único motorista
+	\end{itemize}
+	
+	\item \textbf{Motoristas - Viagens}
+	\begin{itemize}
+		\item (1,N): Um motorista pode criar várias viagens.
+		\item (1,1): Cada viagem é conduzida por um único motorista.
+	\end{itemize}
+	
+	\item \textbf{Viagens - Reservas}
+	\begin{itemize}
+		\item (1,N): Uma viagem pode ter várias reservas.
+		\item (1,1): Cada reserva está associada a uma única viagem.
+	\end{itemize}
+	
+	\item \textbf{Viagens - Avaliações}
+	\begin{itemize}
+		\item (1,N): Uma viagem pode ter várias avaliações.
+		\item (1,1): Cada avaliação é feita para uma única viagem.
 	\end{itemize}
 	
 	\item \textbf{Endereço - Viagens}
 	\begin{itemize}
-		\item (1,1): Cada viagem tem um endereço associado.
-		\item (0,N): Cada endereço pode estar associado a várias viagens.
+		\item (1,1): Uma viagem tem um endereço associado.
+		\item (1,N): Cada endereço pode estar associado a várias viagens.
 	\end{itemize}
 	
 	\item \textbf{Mensagens - Viagens}
 	\begin{itemize}
-		\item (0,N): Cada viagem pode ter várias mensagens associadas.
-		\item (0,N): Cada mensagem pode estar associada a várias viagens.
+		\item (1,N): Uma viagem pode ter várias mensagens associadas.
+		\item (1,1): Cada mensagem pode estar se referir a uma única viagem.
 	\end{itemize}
 	
 	\item \textbf{Veículo - Viagens}
 	\begin{itemize}
-		\item (1,N): Cada veículo pode ser utilizado em várias viagens.
-		\item (0,1): Cada viagem utiliza um único veículo.
+		\item (1,N): Um veículo pode ser utilizado em várias viagens.
+		\item (1,1): Cada viagem utiliza um único veículo.
 	\end{itemize}
 \end{enumerate}
 
