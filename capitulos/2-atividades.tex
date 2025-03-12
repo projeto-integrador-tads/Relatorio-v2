@@ -350,12 +350,12 @@ O Dicionário de Dados é uma utilizada em projetos acadêmicos e de desenvolvim
 	
 	data\_envio           & DATETIME               & Data do envio da mensagem.~                       \\
 	
-	{(FK)\\remetente}     & VARCHAR                & Chave estrangeira.~                                \\
+	{(FK)\_remetente}     & VARCHAR                & Chave estrangeira.~                                \\
 	
-	{(FK)\\viagens}       & VARCHAR                & Chave estrangeira.~                                 \\
+	{(FK)\_viagens}       & VARCHAR                & Chave estrangeira.~                                 \\
 	
-	{(FK)\\destinatario}  & VARCHAR                & Chave estrangeira.~
-	                      
+	{(FK)\\\_destinatario}  & VARCHAR                & Chave estrangeira.~
+	                     
 \end{longtblr}
 
 
@@ -424,13 +424,13 @@ O Dicionário de Dados é uma utilizada em projetos acadêmicos e de desenvolvim
 	
 	{lugares\\\_disponiveis} & INT & Armazena a quantidade de assentos disponíveis para os passageiros de acordo com o veículo cadastrado pelo motorista.\\
 
-	{(FK) \\motorista} & VARCHAR & Chave estrangeira, referência à tabela ``motoristas''.\\ 
+	{(FK)\_motorista} & VARCHAR & Chave estrangeira, referência à tabela ``motoristas''.\\ 
 	
-	{(FK) \\enderecos\\\_destino} & VARCHAR & Chave estrangeira.\\
+	{(FK)\_enderecos\\\_destino} & VARCHAR & Chave estrangeira.\\
 	
-	{(FK) \\enderecos\\\_partida} & VARCHAR & Chave estrangeira.\\
+	{(FK)\_enderecos\\\_partida} & VARCHAR & Chave estrangeira.\\
 	
-	{(FK) \\veiculo} & VARCHAR & Chave estrangeira, referência à tabela ``veículos''.\\
+	{(FK)\_veiculo} & VARCHAR & Chave estrangeira, referência à tabela ``veículos''.\\
 
 \end{longtblr}
 
@@ -469,7 +469,7 @@ O Dicionário de Dados é uma utilizada em projetos acadêmicos e de desenvolvim
 	
 	{data\_criacao} & DATETIME & Armazena a data da criação no momento em que a reserva é feita.~\\
 	
-	{data\\\_atualizacao}  & DATETIME  &                     \\
+	{data\_atualizacao}  & DATETIME  &                     \\
 	 
 	status & ENUM & Armazena os possíveis status da reserva, variando entre agendado, em andamento,concluído ou cancelado.\\
 	
@@ -517,9 +517,9 @@ O Dicionário de Dados é uma utilizada em projetos acadêmicos e de desenvolvim
 	
 	comentario & VARCHAR & Mensagem de avaliação do usuário.~\\
 
-	{data\\\_criacao} & DATETIME & Data de criação do registro.\\
+	{data\_criacao} & DATETIME & Data de criação do registro.\\
 	
-	{data\\\_atualizacao} & DATETIME & Data da modificação mais recente. \\
+	{data\_atualizacao} & DATETIME & Data da modificação mais recente. \\
 
 	{(FK)\_avaliador}  &  VARCHAR  &    \\
 	
@@ -573,9 +573,9 @@ O Dicionário de Dados é uma utilizada em projetos acadêmicos e de desenvolvim
 	
 	ativo & BOOLEAN & Salva a informação se o endereço é ativo.\\
 	
-	{data\\\_criacao} & DATETIME & Data de criação do registro.\\
+	{data\_criacao} & DATETIME & Data de criação do registro.\\
 	
-	{data\\\_atualizacao} & DATETIME & Data da última atualização. \\
+	{data\_atualizacao} & DATETIME & Data da última atualização. \\
 	
 	{(FK)\_usuarios} & VARCHAR & Chave estrangeria, referência a tabela ``usuarios''.
 	
@@ -761,7 +761,7 @@ A interface foi projetada com foco na responsividade, usabilidade e experiência
 
 \textbf{Inputs, Botões e Icones:} Os campos de entrada (inputs) foram projetados para serem acessíveis e de fácil identificação. Foram aplicados bordas arredondadas, espaçamento adequado e feedback visual para indicar erros ou sucessos nas interações dos usuários. Os botões seguem um estilo minimalista, utilizando o azul primário (\#0064D2) para submeter ações principais. Adotou-se também uma biblioteca de ícones chamada ``Tabler'', disponível em [https://tabler.io/admin-template].
 
-\textbf{Logo} O logotipo do aplicativo foi desenvolvido para refletir o conceito de transporte de maneira abstrata. Utilizou-se uma abordagem minimalista, incorporando elementos gráficos que remetem a um formato de uma roda.
+\textbf{Logo:} O logotipo do aplicativo foi desenvolvido para refletir o conceito de transporte de maneira abstrata. Utilizou-se uma abordagem minimalista, incorporando elementos gráficos que remetem a um formato de uma roda.
 
 
 \subsection{Componentização e Reutilização}
