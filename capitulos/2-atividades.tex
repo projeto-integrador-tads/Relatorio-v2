@@ -713,15 +713,32 @@ O Dicionário de Dados é uma utilizada em projetos acadêmicos e de desenvolvim
 
 
 \section{Front-end}
-Breve descrição sobre o front-end
+
+O desenvolvimento do front-end do aplicativo VemComigo foi orientado para proporcionar uma experiência intuitiva e acessível aos usuários. As escolhas durante esta etapa seguem os conhecimentos adquiridos nas aulas de Banco de Dados II, Análise e Projeto de Sistemas, Práticas Profissionais Integradoras II e Desenvolvimento Web II.
 
 \subsection{Arquitetura do Front-End}
 
-%Estrutura geral do projeto (pasta, componentes, padrões adotados). Frameworks e bibliotecas utilizadas (React, Vue, Angular, etc.). Comunicação com o back-end (REST API, GraphQL, WebSockets).
+Primeiramente, foi realizada a prototipação das possíveis telas com o auxílio de um projeto criado no Figma, o qual pode ser acessado por meio do link:[https://abrir.link/PMhoA]. Criou-se pastas no projeto com a finalidade de melhor organizar as projeções do visual da aplicação. Os primeiros esboços visuais da aplicação encontram-se na página ``Wireframes''. O desing de alta fidelidade foi projetado na sequência e pode ser encontrado na página ``Desing'' do projeto. Por fim, para integrar toda a API do back-end, desenvolvida anteriormente, ao front-end escolheu-se o React Native como framework do JavaScript, visando a criação de uma aplicação multiplataforma eficiente e de forma paralela para Android e IOS. Foi necessário utilizar o Expo como uma ferramenta auxiliar nos testes das telas desenvolvidas, garantindo que os componentes estivessem bem posicionados na tela.
+
+
 
 \subsection{Design e UX (Experiência do Usuário)}
 
-%Princípios de design adotados. Uso de Design Systems ou bibliotecas (Material UI, Tailwind, Bootstrap). Acessibilidade e usabilidade.
+A interface foi projetada com foco na responsividade, usabilidade e experiência do usuário, permitindo que esses, mesmo que em diferentes dispositivos móveis, tenham uma utilização intuitiva e fluida. O VemComigo é uma aplicação voltada para a mobilidade e deslocamento de pessoas, dito isso, imagina-se que o usuário final busca simplicidade para escolher rapidamente um meio viável de transporte em meio a agitação do dia a dia. Nesse contexto, decidiu-se então que as telas deveriam ser minimalistas de forma que apenas informações necessárias ocupassem espaço na tela, evitando confusões em usuários mais desatentos. As principais escolhas do desing foram:
+
+\textbf{Paleta de Cores:} A escolha das cores seguiu princípios de acessibilidade e contraste, sendo composta por:
+\begin{itemize}
+	\item Cor principal: \#0064D2 (Azul vibrante) – representa confiança, tecnologia e mobilidade.
+	\item Cor de Fundo: \#FFFFFF (Branco) – proporciona um ambiente limpo e moderno, facilitando a leitura e destacando os elementos interativos.
+	\item Cores secundárias e de apoio: tons de cinza e azul escuro foram utilizados para equilibrar a interface e manter um visual neutro e sofisticado.
+\end{itemize}
+
+\textbf{Tipografia:} A fonte escolhida para o aplicativo foi a Poppins, uma tipografia moderna e elegante, amplamente utilizada em interfaces digitais por sua excelente legibilidade em diferentes tamanhos de tela. O uso de diferentes pesos (light, regular, semibold e bold) permitiu hierarquizar informações e destacar conteúdos importantes sem comprometer a estética da interface
+
+\textbf{Inputs, Botões e Icones:} Os campos de entrada (inputs) foram projetados para serem acessíveis e de fácil identificação. Foram aplicados bordas arredondadas, espaçamento adequado e feedback visual para indicar erros ou sucessos nas interações dos usuários. Os botões seguem um estilo minimalista, utilizando o azul primário (\#0064D2) para submeter ações principais. Adotou-se também uma biblioteca de ícones chamada ``Tabler'', disponível em [https://tabler.io/admin-template].
+
+\textbf{Logo} O logotipo do aplicativo foi desenvolvido para refletir o conceito de transporte de maneira abstrata. Utilizou-se uma abordagem minimalista, incorporando elementos gráficos que remetem a um formato de uma roda.
+
 
 \subsection{Componentização e Reutilização}
 
@@ -729,8 +746,25 @@ Breve descrição sobre o front-end
 
 \subsection{Diagrama de Classes}
 
+O diagrama de classes do VemComigo foi gerado com base no schema do Prisma, refletindo a estrutura dos dados e os relacionamentos entre as entidades da aplicação. Como o projeto utiliza um back-end baseado em Node.js e Prisma ORM, sem a implementação direta de classes, o diagrama representa apenas os modelos de dados, sem a definição de métodos. Entre as principais entidades do sistema, destacam-se Usuário, Veículo, Corrida, Reserva, Endereço e Avaliação, além das tabelas auxiliares como Token e Mensagem. As relações foram modeladas para garantir um fluxo eficiente entre motoristas e passageiros, possibilitando funcionalidades como gerenciamento de corridas, envio de mensagens e sistema de avaliação. Essa estrutura permite a manipulação otimizada dos dados, garantindo escalabilidade e performance na aplicação. O ``Anexo C'' apresenta uma representação gráfica do diagrama de classes.
+
 \subsection{Diagrama de Caso de Uso}
 
+O diagrama de caso de uso do VemComigo representa as interações entre os principais atores do sistema: Passageiro, Motorista e Administrador. Ele ilustra os serviços disponíveis para cada perfil de usuário, destacando funcionalidades como criação de conta, solicitação e gerenciamento de corridas, troca de mensagens entre usuários e sistema de avaliações.  O ``Anexo D'' apresenta uma representação gráfica do diagrama de classes.
+
+\textbf{Atores:}
+\begin{itemize}
+	\item Passageiro – Usuário que solicita caronas.
+	\item Motorista – Usuário que oferece caronas.
+	\item Administrador – Responsável por gerenciar o sistema.
+\end{itemize}
+
+\textbf{Casos de Uso:}
+\begin{enumerate}
+	\item O passageiro pode solicitar caronas, gerenciar reservas e avaliar motoristas.
+	\item O motorista pode cadastrar veículos, oferecer corridas e interagir com passageiros.
+	\item  O administrador, por sua vez, possui permissões para gerenciar usuários e monitorar avaliações.
+\end{enumerate} 
 
 \section{Tecnologias e Ferramentas}
 
