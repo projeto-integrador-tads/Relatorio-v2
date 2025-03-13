@@ -249,34 +249,33 @@ O Dicionário de Dados é uma utilizada em projetos acadêmicos e de desenvolvim
 		hlines,
 		vlines,
 	}
-	\textbf{Usuários} &  & \\
-	\textbf{NOME} & \textbf{TIPO DE DADOS} & \textbf{DESCRIÇÃO}\\
+	\textbf{Usuários}                &                         &                  \\
+	\textbf{NOME}                    & \textbf{TIPO DE DADOS}  & \textbf{DESCRIÇÃO}\\
 	
-	{(PK)\\id\_usuario} & VARCHAR & Chave primaria Identificador único da tabela ``usuarios''.\\
+	{(PK)\\id\_usuario} 			 & VARCHAR                 & Chave primaria Identificador único da tabela ``usuarios''.\\
 	
-	nome & VARCHAR & Nome do usuário.\\
+	nome                             & VARCHAR                 & Nome do usuário.\\
 	
-	segundo\_nome & VARCHAR & Sobrenome do usuário.\\
+	{segundo\_nome}                  & VARCHAR                 & Sobrenome do usuário.\\
 	
-	email & VARCHAR~ & E-mail único, utilizado para login.\\
+	email                            & VARCHAR~                & E-mail único, utilizado para login.\\
 	
-	senha & VARCHAR~ & {Senha forte, com no mínimo 8 caracteres, incluindo\\letras maiusculas, minúsculas, números e caracteres\\especiais.}\\
+	senha                            & VARCHAR~                & {Senha forte, com no mínimo 8 caracteres, incluindo\\letras maiusculas, minúsculas, números e caracteres\\especiais.} \\
 	
-	telefone & VARCHAR & Número de telefone válido.\\
+	telefone                         & VARCHAR                 & Número de telefone válido.\\
 	
-	foto\_perfil & VARCHAR~ & Caminho para a foto de perfil do usuário.\\
+	foto\_perfil                     & VARCHAR~                & Caminho para a foto de perfil do usuário.\\
 	
-	eh\_motorista & BOOLEAN & Diferencia o usuário do motorista.\\
+	eh\_motorista                    & BOOLEAN                 & Diferencia o usuário do motorista.\\
 	
-	ativo & BOOLEAN & Salva a informação se o usuário é ativo.\\
+	ativo                            & BOOLEAN                 & Salva a informação se o usuário é ativo.\\
 	
-	{classificacao\\\_media} & DOUBLE & Nota média do usuário.\\
+	{classificacao\\\_media}         & DOUBLE                  & Nota média do usuário.\\
 	
-	data\_criacao & DATE & Armazena a data da criação do perfil.\\
+	data\_criacao                    & DATE                    & Armazena a data da criação do perfil.\\
 	
-	data\_atualizacao & DATE & Ultima atualização do usuário.\\
+	data\_atualizacao                & DATE                    & Ultima atualização do usuário.
 	
-
 \end{longtblr}
 
 
@@ -307,16 +306,18 @@ O Dicionário de Dados é uma utilizada em projetos acadêmicos e de desenvolvim
 		hlines,
 		vlines,
 	}
-	\textbf{Token} &  & \\
-	\textbf{NOME} & \textbf{TIPO DE DADOS} & \textbf{DESCRIÇÃO}\\
 	
-	{(PK)\\id\_token} & VARCHAR & Chave primária, identificador único da tabela ``token''. ~\\
+	\textbf{Token}        &                        &                                               \\
 	
-	token   &    VARCHAR   &   Armazena o token único gerado para a solicitação de recuperação de senha. \\
+	\textbf{NOME}         & \textbf{TIPO DE DADOS} &  \textbf{DESCRIÇÃO}\\
 	
-	{expiracao\_em} & DATETIME &  Armazena a data e hora em que o token expira.~\\
+	{(PK)\\id\_token}	  &     VARCHAR            &  Chave primária, identificador único da tabela ``token''. ~\\
+	  
+	token      			  &     VARCHAR            &  Armazena o token único gerado para a solicitação de recuperação de senha. \\
 	
-	{(FK)\_usuarios}  & VARCHAR   &  Chave estrangeira, referência à tabela ``usuarios''.
+	{expiracao\_em} 	  &     DATETIME           &  Armazena a data e hora em que o token expira.~\\
+	
+	{(FK)\_usuarios}	  &     VARCHAR   	       &  Chave estrangeira, referência à tabela ``usuarios''.
 	
 \end{longtblr}
 
@@ -350,11 +351,11 @@ O Dicionário de Dados é uma utilizada em projetos acadêmicos e de desenvolvim
 	
 	data\_envio           & DATETIME               & Data do envio da mensagem.~                       \\
 	
-	{(FK)\_remetente}     & VARCHAR                & Chave estrangeira.~                                \\
+	{(FK)\_remetente}     & VARCHAR                & Chave estrangeira, referência à tabela ``usuarios'', representando o usuário que enviou a mensagem.~  \\
 	
-	{(FK)\_viagens}       & VARCHAR                & Chave estrangeira.~                                 \\
+	{(FK)\_viagens}       & VARCHAR                & Chave estrangeira, referência à tabela ``viagens''.~            \\
 	
-	{(FK)\\\_destinatario}  & VARCHAR                & Chave estrangeira.~
+	{(FK)\\\_destinatario}  & VARCHAR              & Chave estrangeira, referência à tabela ``usuarios'', representando o usuário que recebeu a mensagem.~
 	                     
 \end{longtblr}
 
@@ -403,34 +404,34 @@ O Dicionário de Dados é uma utilizada em projetos acadêmicos e de desenvolvim
 		hlines,
 		vlines,
 	}
-	\textbf{VIAGENS} &  & \\
-	\textbf{NOME} & \textbf{TIPO DE DADOS} & \textbf{DESCRIÇÃO}\\
+	\textbf{VIAGENS}            &                         &                   \\
+	\textbf{NOME}               & \textbf{TIPO DE DADOS}  & \textbf{DESCRIÇÃO} \\
 	
-	{(PK) \\id\_viagem} & VARCHAR & Chave primária, identificador da tabela viagem.\\
+	{(PK) \\id\_viagem}         & VARCHAR                 & Chave primária, identificador da tabela viagem.\\
 	
-	status & ENUM & Armazena os possíveis status da corrida, variando entre agendado, em andamento,concluído ou cancelado.\\
+	status                      & ENUM                    & Armazena os possíveis status da corrida, variando entre agendado, em andamento, concluído ou cancelado.\\
 	
-	{data\_criacao} & DATETIME & Data da criação da corrida.~\\
+	{data\_criacao}             & DATETIME                & Data da criação da corrida.~\\
 	
-	preco & DECIMAL & Preço da corrida, quando aplicável a monetização da mesma.\\
+	preco                       & DECIMAL                 & Preço da corrida, quando aplicável a monetização da mesma.\\
 	
-	{hora\_termino} & DATETIME & Registra a hora que a corrida acaba.\\
+	{hora\_termino}             & DATETIME                & Registra a hora que a corrida acaba.\\
 	
-	{preferencias} & VARCHAR & Preferências da corrida definidas pelos participantes antes do seu início.\\
+	{preferencias}              & VARCHAR                 & Preferências da corrida definidas pelos participantes antes do seu início.\\
+	 
+	{data\_atualizacao}         & DATETIME                & Data de atualização mais recente da viagem.\\
 	
-	{data\_atualizacao} & DATETIME & Data de atualização mais recente da viagem.\\
+	{hora\_partida}             & DATETIME                & Define a hora de início de uma viagem.\\
 	
-	{hora\_partida} & DATETIME & Define a hora de início de uma viagem.\\
-	
-	{lugares\\\_disponiveis} & INT & Armazena a quantidade de assentos disponíveis para os passageiros de acordo com o veículo cadastrado pelo motorista.\\
+	{lugares\\\_disponiveis}    & INT                     & Armazena a quantidade de assentos disponíveis para os passageiros, de acordo com o veículo cadastrado pelo motorista.\\
 
-	{(FK)\_motorista} & VARCHAR & Chave estrangeira, referência à tabela ``motoristas''.\\ 
+	{(FK)\_motorista}           & VARCHAR                 & Chave estrangeira, referência à tabela ``motoristas''.\\ 
 	
-	{(FK)\_enderecos\\\_destino} & VARCHAR & Chave estrangeira.\\
+	{(FK)\_endereco\\\_destino} & VARCHAR                 & Chave estrangeira, referência à tabela ``enderecos'', representando o endereço de destino da viagem.\\
 	
-	{(FK)\_enderecos\\\_partida} & VARCHAR & Chave estrangeira.\\
+	{(FK)\_endereco\\\_partida} & VARCHAR                 & Chave estrangeira, referência à tabela ``enderecos'', representando o endereço de partida da viagem.\\
 	
-	{(FK)\_veiculo} & VARCHAR & Chave estrangeira, referência à tabela ``veículos''.\\
+	{(FK)\_veiculo}             & VARCHAR                 & Chave estrangeira, referência à tabela ``veiculos''.\\
 
 \end{longtblr}
 
@@ -461,22 +462,22 @@ O Dicionário de Dados é uma utilizada em projetos acadêmicos e de desenvolvim
 		hlines,
 		vlines,
 	}
-	\textbf{RESERVAS} &  & \\
-	\textbf{NOME} & \textbf{TIPO DE DADOS} & \textbf{DESCRIÇÃO}\\
+	\textbf{RESERVAS}      &                        & \\
+	\textbf{NOME}          & \textbf{TIPO DE DADOS} & \textbf{DESCRIÇÃO}\\
 	
-	{(PK)\\id\_reserva} & VARCHAR & Chave primária, identificador único da tabela ``reserva''.\\
+	{(PK)\\id\_reserva}    & VARCHAR                & Chave primária, identificador único da tabela ``reservas''.\\
 	
-	{data\_criacao} & DATETIME & Armazena a data da criação no momento em que a reserva é feita.~\\
+	{data\_criacao}        & DATETIME               & Armazena a data da criação no momento em que a reserva é feita.~\\
 	
-	{data\_atualizacao}  & DATETIME  &                     \\
+	{data\_atualizacao}    & DATETIME               & Armazena a data em que a viagem foi atualizada.             \\
 	 
-	status & ENUM & Armazena os possíveis status da reserva, variando entre agendado, em andamento,concluído ou cancelado.\\
+	status                 & ENUM                   & Armazena os possíveis status da reserva, variando entre agendado, em andamento, concluído ou cancelado.\\
 	
-	{status\\\_pagamento} & ENUM & Armazena os possíveis status de pagamento quando aplicável. \\
+	{status\\\_pagamento}  & ENUM                   & Armazena os possíveis status de pagamento quando aplicável. \\
 	
-	{(FK)\_passageiro}  & VARCHAR   &  ~ \\
+	{(FK)\_passageiro}     & VARCHAR                & Chave estrangeira, referência à tabela ``usuarios'', representando o usuário que solicita a viagem. ~ \\
 	
-	{(FK)\_viagens}  & VARCHAR   &  Chave estrangeira, referência à tabela ``viagens''. \\
+	{(FK)\_viagens}        & VARCHAR                & Chave estrangeira, referência à tabela ``viagens''. \\
 	
 	
 \end{longtblr}
@@ -507,24 +508,24 @@ O Dicionário de Dados é uma utilizada em projetos acadêmicos e de desenvolvim
 		hlines,
 		vlines,
 	}
-	\textbf{AVALIAÇÕES} &  & \\
-	\textbf{NOME} & \textbf{TIPO DE DADOS} & \textbf{DESCRIÇÃO}\\
+	\textbf{AVALIAÇÕES}   &                        &  \\
+	\textbf{NOME}         & \textbf{TIPO DE DADOS} & \textbf{DESCRIÇÃO}\\
 	
-	{(PK)\\id\_avaliacao} & VARCHAR & Chave primária, identificador único da avaliação.\\
+	{(PK)\\id\_avaliacao} & VARCHAR                & Chave primária, identificador único da avaliação.\\
 	
-	avaliacao & INT & Numeral de 1 a 5 representando a nota da avaliação.\\
+	avaliacao             & INT                    & Numeral de 1 a 5 representando a nota da avaliação.\\
 	
-	comentario & VARCHAR & Mensagem de avaliação do usuário.~\\
+	comentario            & VARCHAR                & Mensagem de avaliação do usuário.~\\
 
-	{data\_criacao} & DATETIME & Data de criação do registro.\\
+	{data\_criacao}       & DATETIME               & Data de criação do registro.\\
 	
-	{data\_atualizacao} & DATETIME & Data da modificação mais recente. \\
+	{data\_atualizacao}   & DATETIME               & Data da modificação mais recente. \\
 
-	{(FK)\_avaliador}  &  VARCHAR  &    \\
+	{(FK)\_avaliador}     & VARCHAR                & Chave estrangeira, referência à tabela ``usuarios'', representando o usuário que avaliará.   \\
+	 
+	{(FK)\_viagens}       & VARCHAR                & Chave estrangeira, referência à tabela ``viagens''. \\
 	
-	{(FK)\_viagens}  &  VARCHAR  &   Chave estrangeira, referência à tabela ``viagens''. \\
-	
-	{(FK)\_avaliado}  &  VARCHAR  &    
+	{(FK)\_avaliado}      & VARCHAR                & Chave estrangeira, referência à tabela ``usuarios'', representando o usuário que será avaliado.
 	
 \end{longtblr}
 
@@ -557,26 +558,26 @@ O Dicionário de Dados é uma utilizada em projetos acadêmicos e de desenvolvim
 		hlines,
 		vlines,
 	}
-	\textbf{ENDEREÇOS} &  & \\
-	\textbf{NOME} & \textbf{TIPO DE DADOS} & \textbf{\textbf{DESCRIÇÃO}}\\
+	\textbf{ENDEREÇOS}        &                        &                           \\
+	\textbf{NOME}             & \textbf{TIPO DE DADOS} & \textbf{\textbf{DESCRIÇÃO}}\\
 	
-	{(PK)\\id\_endereco} & VARCHAR & Chave primária, identificador único do endereço.\\
+	{(PK)\\id\_endereco}      & VARCHAR                & Chave primária, identificador único do endereço.\\
 	
-	cidade & VARCHAR & Nome da cidade.\\
+	cidade                    & VARCHAR                & Nome da cidade.\\
 	
-	longitude & DOUBLE & coordenada que especifica a posição geográfica da posição norte-sul de uma cidade específica. É de suma importância nas requisições.\\
+	longitude                 & DOUBLE                 & Coordenada geográfica que especifica a posição norte-sul de uma cidade específica. É de suma importância nas requisições.\\
 	
-	latitude & VARCHAR & coordenada geográfica que especifica a posição leste–oeste de uma cidade específica. É de suma importância nas requisições.\\
+	latitude                  & VARCHAR                & Coordenada geográfica que especifica a posição leste–oeste de uma cidade específica. É de suma importância nas requisições.\\
 	
-	{endereco\\\_formatado} & VARCHAR & Nome formatado do endereço. Importante para a precisão das pesquisas, uma vez que algumas localizações possuem nomes populares, não registrados pelos serviços de geolocalização.\\
+	{endereco\\\_formatado}   & VARCHAR                & Nome formatado do endereço. Importante para a precisão das pesquisas, uma vez que algumas localizações possuem nomes populares, não registrados pelos serviços de geolocalização.\\
 	
-	ativo & BOOLEAN & Salva a informação se o endereço é ativo.\\
+	ativo                     & BOOLEAN                & Salva a informação se o endereço é ativo.\\
 	
-	{data\_criacao} & DATETIME & Data de criação do registro.\\
+	{data\_criacao}           & DATETIME               & Data de criação do registro.\\
 	
-	{data\_atualizacao} & DATETIME & Data da última atualização. \\
+	{data\_atualizacao}       & DATETIME               & Data da última atualização. \\
 	
-	{(FK)\_usuarios} & VARCHAR & Chave estrangeria, referência a tabela ``usuarios''.
+	{(FK)\_usuarios}          & VARCHAR                & Chave estrangeria, referência a tabela ``usuarios''.
 	
 \end{longtblr}
 
@@ -617,30 +618,30 @@ O Dicionário de Dados é uma utilizada em projetos acadêmicos e de desenvolvim
 		hlines,
 		vlines,
 	}
-	\textbf{VEÍCULOS} &  & \\
-	\textbf{NOME} & \textbf{TIPO DE DADOS} & \textbf{DESCRIÇÃO}\\
+	\textbf{VEÍCULOS}         &                         &                  \\
+	\textbf{NOME}             & \textbf{TIPO DE DADOS}  & \textbf{DESCRIÇÃO}\\
 	
-	{(PK) \\id\_veiculo} & VARCHAR & Chave primária, identificador único do veículo.\\
+	{(PK) \\id\_veiculo}      & VARCHAR                 & Chave primária, identificador único do veículo.\\
 	
-	data\_atualizacao & DATETIME & data da última alteração dos dados do veículo.~\\
+	data\_atualizacao         & DATETIME                & Data da última alteração dos dados do veículo.~\\
 	
-	cor & VARCHAR & Cor do veículo.\\
+	cor                       & VARCHAR                 & Cor do veículo.\\
 	
-	marca & VARCHAR & Descreve a marca do veículo.\\
+	marca                     & VARCHAR                 & Descreve a marca do veículo.\\
 	
-	data\_criacao & DATETIME & Data de cadastro do veículo.\\
+	data\_criacao             & DATETIME                & Data de cadastro do veículo.\\
 	
-	ativo & BOOLEAN & Verifica se o veículo ainda está ativo na aplicação ou não. \\
+	ativo                     & BOOLEAN                 & Verifica se o veículo ainda está ativo na aplicação ou não. \\
 	
-	ano & INT & Ano de fabricação do veículo.\\
+	ano                       & INT                     & Ano de fabricação do veículo.\\
 	
-	placa & VARCHAR & Salva o número da placa do veículo após o seu registro.\\ 
+	placa                     & VARCHAR                 & Salva o número da placa do veículo após o seu registro.\\ 
 	
-	capacidade & INT & Quantidade máxima de passageiros que o veículo registrado deve possuir.\\
+	capacidade                & INT                     & Quantidade máxima de passageiros que o veículo registrado deve possuir.\\
 	
-	modelo & VARCHAR & Descreve o modelo do veículo.~\\
+	modelo                    & VARCHAR                 & Descreve o modelo do veículo.~\\
 	
-	{(FK)\\\_proprietario}   &   VARCHAR   &   
+	{(FK)\\\_proprietario}    & VARCHAR                 & Chave estrangeira, referência à tabela ``usuarios'', representando o usuário proprietário do veículo.
 	
 	
 \end{longtblr}
@@ -731,7 +732,7 @@ O desenvolvimento do front-end do aplicativo VemComigo foi orientado para propor
 
 \subsection{Arquitetura do Front-End}
 
-Primeiramente, foi realizada a prototipação das possíveis telas com o auxílio de um projeto criado no Figma, o qual pode ser acessado por meio do link:[https://abrir.link/PMhoA]. Criou-se pastas no projeto com a finalidade de melhor organizar as projeções do visual da aplicação. Os primeiros esboços visuais da aplicação encontram-se na página ``Wireframes''. O desing de alta fidelidade foi projetado na sequência e pode ser encontrado na página ``Desing'' do projeto. Por fim, para integrar toda a API do back-end, desenvolvida anteriormente, ao front-end escolheu-se o React Native como framework do JavaScript, visando a criação de uma aplicação multiplataforma eficiente e de forma paralela para Android e IOS. Foi necessário utilizar o Expo como uma ferramenta auxiliar nos testes das telas desenvolvidas, garantindo que os componentes estivessem bem posicionados na tela.
+Primeiramente, foi realizada a prototipação das possíveis telas com o auxílio de um projeto criado no Figma, o qual pode ser acessado por meio do link:[https://abrir.link/PMhoA]. Criou-se pastas no projeto com a finalidade de melhor organizar as projeções do visual da aplicação. Os primeiros esboços visuais da aplicação encontram-se na página ``Wireframes''. O desing de alta fidelidade foi projetado na sequência e pode ser encontrado na página ``Desing'' do projeto. Por fim, para integrar a API do back-end desenvolvida anteriormente ao front-end, escolheu-se o React Native como framework do JavaScript, visando a criação de uma aplicação multiplataforma eficiente e de forma paralela para Android e IOS. Foi necessário utilizar o Expo como uma ferramenta auxiliar nos testes das telas desenvolvidas, garantindo que os componentes estivessem bem posicionados na tela.
 
 \subsection{Design e UX (Experiência do Usuário)}
 
@@ -842,7 +843,7 @@ O desenvolvimento de software exige uma variedade de recursos durante a produç�
 
 \begin{enumerate}
 	\item \textit{JavaScript} -   linguagem de programação escolhida devido a sua  versatilidade, facilidade de uso, sintaxe limpa e grande oferta de \textit{frameworks.}
-	\item \textit{TypeScript} - é o superset do \textit{JavaScript} que adiciona tipagem estática à linguagem,  permitindo com que o desenvolvedor possa definir os tipos de dados das suas variáveis, funções e objetos com a finalidade de tornar o código mais seguro, previsível e escalável, além de facilitar futuras refatorações
+	\item \textit{TypeScript} - é o superset do \textit{JavaScript} que adiciona tipagem estática à linguagem,  permitindo com que o desenvolvedor possa definir os tipos de dados das suas variáveis, funções e objetos com a finalidade de tornar o código mais seguro, previsível e escalável, além de facilitar futuras refatorações.
 
 \end{enumerate}
 
