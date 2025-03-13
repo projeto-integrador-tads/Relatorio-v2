@@ -9,7 +9,7 @@ O projeto tem como objetivo facilitar a busca e divulgação de caronas de forma
 
 \section{Organização Inicial}
 
-Primordialmente, foi fundamental criar uma organização no\textit{ GitHub} para gerenciar futuras atualizações do projeto entre os desenvolvedores, a qual pode ser acessada por meio do link: [https://github.com/projeto-integrador-tads/]
+Primordialmente, foi fundamental criar uma organização no\textit{ GitHub} para gerenciar futuras atualizações do projeto entre os desenvolvedores, a qual pode ser acessada por meio do link: [https://github.com/projeto-integrador-tads/].
 
 \subsection{Requisitos Funcionais}
 
@@ -435,7 +435,6 @@ O Dicionário de Dados é uma utilizada em projetos acadêmicos e de desenvolvim
 \end{longtblr}
 
 
-
 % Tabela RESERVAS
 \begin{longtblr}[
 	caption = {Descrição da Entidade Reservas.},
@@ -726,16 +725,6 @@ O Dicionário de Dados é uma utilizada em projetos acadêmicos e de desenvolvim
 	\end{itemize}
 \end{enumerate}
 
-
-%---------
-
-
-
-
-% ------------------------------
-
-
-
 \section{Front-end}
 
 O desenvolvimento do front-end do aplicativo VemComigo foi orientado para proporcionar uma experiência intuitiva e acessível aos usuários. As escolhas durante esta etapa seguem os conhecimentos adquiridos nas aulas de Banco de Dados II, Análise e Projeto de Sistemas, Práticas Profissionais Integradoras II e Desenvolvimento Web II.
@@ -744,29 +733,61 @@ O desenvolvimento do front-end do aplicativo VemComigo foi orientado para propor
 
 Primeiramente, foi realizada a prototipação das possíveis telas com o auxílio de um projeto criado no Figma, o qual pode ser acessado por meio do link:[https://abrir.link/PMhoA]. Criou-se pastas no projeto com a finalidade de melhor organizar as projeções do visual da aplicação. Os primeiros esboços visuais da aplicação encontram-se na página ``Wireframes''. O desing de alta fidelidade foi projetado na sequência e pode ser encontrado na página ``Desing'' do projeto. Por fim, para integrar toda a API do back-end, desenvolvida anteriormente, ao front-end escolheu-se o React Native como framework do JavaScript, visando a criação de uma aplicação multiplataforma eficiente e de forma paralela para Android e IOS. Foi necessário utilizar o Expo como uma ferramenta auxiliar nos testes das telas desenvolvidas, garantindo que os componentes estivessem bem posicionados na tela.
 
-
-
 \subsection{Design e UX (Experiência do Usuário)}
 
-A interface foi projetada com foco na responsividade, usabilidade e experiência do usuário, permitindo que esses, mesmo que em diferentes dispositivos móveis, tenham uma utilização intuitiva e fluida. O VemComigo é uma aplicação voltada para a mobilidade e deslocamento de pessoas, dito isso, imagina-se que o usuário final busca simplicidade para escolher rapidamente um meio viável de transporte em meio a agitação do dia a dia. Nesse contexto, decidiu-se então que as telas deveriam ser minimalistas de forma que apenas informações necessárias ocupassem espaço na tela, evitando confusões em usuários mais desatentos. As principais escolhas do desing foram:
+A interface foi projetada com foco na responsividade, usabilidade e experiência do usuário, permitindo que esses, mesmo que em diferentes dispositivos móveis, tenham uma utilização intuitiva e fluida. O VemComigo é uma aplicação voltada para a mobilidade e deslocamento de pessoas, dito isso, imagina-se que o usuário final busca simplicidade para escolher rapidamente um meio viável de transporte em meio a agitação do dia a dia. Nesse contexto, decidiu-se então que as telas deveriam ser minimalistas de forma que apenas informações necessárias ocupassem espaço na tela, evitando confusões em usuários mais desatentos. A ``tabela \ref{tab:design-ux}'' apresenta as escolhas que compõem o padrão visual da aplicação.
 
-\textbf{Paleta de Cores:} A escolha das cores seguiu princípios de acessibilidade e contraste, sendo composta por:
-\begin{itemize}
-	\item Cor principal: \#0064D2 (Azul vibrante) – representa confiança, tecnologia e mobilidade.
-	\item Cor de Fundo: \#FFFFFF (Branco) – proporciona um ambiente limpo e moderno, facilitando a leitura e destacando os elementos interativos.
-	\item Cores secundárias e de apoio: tons de cinza e azul escuro foram utilizados para equilibrar a interface e manter um visual neutro e sofisticado.
-\end{itemize}
+\begin{longtblr}[
+	caption = {Design e UX (Experiência do Usuário)},
+	label = {tab:design-ux},
+	entry = none,
+	]{
+		width = \linewidth,
+		colspec = {Q[170,c]Q[620]},
+		row{1} = {c},
+		row{2} = {c},
+		cell{1}{1} = {c=2}{0.941\linewidth},
+		cell{3}{1} = {c},
+		cell{3}{2} = {c},
+		cell{4}{1} = {c},
+		cell{4}{2} = {c},
+		cell{5}{1} = {c},
+		cell{5}{2} = {c},
+		cell{6}{1} = {c},
+		cell{6}{2} = {c},
+		cell{7}{1} = {c},
+		cell{7}{2} = {c},
+		hlines,
+		vlines,
+	}
+	\textbf{Design e UX (Experiência do Usuário)} &  \\
+	
+	\textbf{Aspecto} & \textbf{Descrição} \\
+	
+	\textbf{Tipografia} & A fonte escolhida para o aplicativo foi a Poppins, uma tipografia moderna e elegante, amplamente utilizada em interfaces digitais por sua excelente legibilidade em diferentes tamanhos de tela. O uso de diferentes pesos (light, regular, semibold e bold) permitiu hierarquizar informações e destacar conteúdos importantes sem comprometer a estética da interface. \\
+	
+	\textbf{Paleta de Cores} & Cor principal: \#0064D2 (Azul vibrante) – representa confiança, tecnologia e mobilidade.  
+	Cor de Fundo: \#FFFFFF (Branco) – proporciona um ambiente limpo e moderno, facilitando a leitura e destacando os elementos interativos. Cores secundárias e de apoio: tons de cinza e azul escuro foram utilizados para equilibrar a interface e manter um visual neutro e sofisticado. \\
+	
+	\textbf{Componentes Visuais} & A biblioteca de componentes ``Tamagui'' foi utilizada para melhorar os aspectos visuais e garantir a otimização da aplicação. Adotou-se também uma biblioteca de ícones chamada ``Tabler'', disponível em [https://tabler.io/admin-template]. \\
+	
+	\textbf{Inputs e Formulários} & Os campos de entrada (inputs) foram projetados para serem acessíveis e de fácil identificação. Foram aplicados bordas arredondadas, espaçamento adequado e feedback visual para indicar erros ou sucessos nas interações dos usuários. Os botões seguem um estilo minimalista, utilizando o azul primário (\#0064D2) para submeter ações principais. \\
+	
+	\textbf{Logo e Identidade Visual} & O logotipo do aplicativo foi desenvolvido para refletir o conceito de transporte de maneira abstrata. Utilizou-se uma abordagem minimalista, incorporando elementos gráficos que remetem a um formato de uma roda. \\
+	
+	\textbf{Acessibilidade} & Foram aplicadas boas práticas de acessibilidade, garantindo contraste adequado, tamanhos de fonte ajustáveis e navegação intuitiva para todos os usuários. \\
+\end{longtblr}
 
-\textbf{Tipografia:} A fonte escolhida para o aplicativo foi a Poppins, uma tipografia moderna e elegante, amplamente utilizada em interfaces digitais por sua excelente legibilidade em diferentes tamanhos de tela. O uso de diferentes pesos (light, regular, semibold e bold) permitiu hierarquizar informações e destacar conteúdos importantes sem comprometer a estética da interface
 
-\textbf{Inputs, Botões e Icones:} Os campos de entrada (inputs) foram projetados para serem acessíveis e de fácil identificação. Foram aplicados bordas arredondadas, espaçamento adequado e feedback visual para indicar erros ou sucessos nas interações dos usuários. Os botões seguem um estilo minimalista, utilizando o azul primário (\#0064D2) para submeter ações principais. Adotou-se também uma biblioteca de ícones chamada ``Tabler'', disponível em [https://tabler.io/admin-template].
+\subsection{Componentização}
 
-\textbf{Logo:} O logotipo do aplicativo foi desenvolvido para refletir o conceito de transporte de maneira abstrata. Utilizou-se uma abordagem minimalista, incorporando elementos gráficos que remetem a um formato de uma roda.
+A adoção da componentização no desenvolvimento do front-end do aplicativo permitiu a criação de uma interface modular, escalável e de fácil manutenção. Utilizando React Native com o auxílio do Tamagui, os componentes foram desenvolvidos de forma reutilizável, garantindo maior consistência visual e reduzindo a duplicação de código. Entre os principais benefícios dessa abordagem observa-se:
 
-
-\subsection{Componentização e Reutilização}
-
-%Organização dos componentes. Estratégias para reutilização de código. Gerenciamento de estado (Redux, Context API, Zustand, etc.).
+\begin{enumerate}
+	\item \textbf{Reutilização de Código:} Componentes como botões e inputs foram desenvolvidos para permitir a sua aplicação em diferentes telas sem necessidade de reescrita.
+	\item \textbf{Facilidade de Manutenção:} Alterações no design ou comportamento podem ser feitas em um único local, refletindo automaticamente em todas as instâncias do componente.
+	\item \textbf{Melhoria na Performance:} O uso de componentes otimizados reduz a renderização desnecessária, tornando a aplicação mais eficiente.
+\end{enumerate}
 
 \subsection{Diagrama de Classes}
 
@@ -774,21 +795,33 @@ O diagrama de classes do VemComigo foi gerado com base no schema do Prisma, refl
 
 \subsection{Diagrama de Caso de Uso}
 
-O diagrama de caso de uso do VemComigo representa as interações entre os principais atores do sistema: Passageiro, Motorista e Administrador. Ele ilustra os serviços disponíveis para cada perfil de usuário, destacando funcionalidades como criação de conta, solicitação e gerenciamento de corridas, troca de mensagens entre usuários e sistema de avaliações.  O ``Anexo D'' apresenta uma representação gráfica do diagrama de classes.
+O diagrama de caso de uso do VemComigo representa as interações entre os principais atores do sistema: Passageiro, Motorista e Administrador. Ele ilustra os serviços disponíveis para cada perfil de usuário, destacando funcionalidades como criação de conta, solicitação e gerenciamento de corridas, troca de mensagens entre usuários e sistema de avaliações.  O ``Anexo D'' apresenta uma representação gráfica do diagrama de classes. Em síntese, a ``Tabela \ref{tab:atores-casosdeuso}'' descreve os atores da aplicação e algumas das suas principais ações no sistema.
 
-\textbf{Atores:}
-\begin{itemize}
-	\item Passageiro – Usuário que solicita caronas.
-	\item Motorista – Usuário que oferece caronas.
-	\item Administrador – Responsável por gerenciar o sistema.
-\end{itemize}
+\begin{longtblr}[
+	caption = {Atores e Casos de Uso do Aplicativo},
+	label = {tab:atores-casosdeuso},
+	entry = none,
+	]{
+		width = \linewidth,
+		colspec = {Q[250,c]Q[650,l]},
+		row{1} = {c},
+		hlines,
+		vlines,
+	}
+	\textbf{Ator} & \textbf{Casos de Uso} \\
+	
+	\textbf{Passageiro} & 
+	Criar conta, Fazer login, Solicitar uma carona, Cancelar reserva, Ver histórico de corridas, Avaliar motorista, Gerenciar endereço salvo, Enviar mensagem ao motorista. \\
+	
+	\textbf{Motorista} & 
+	Criar conta, Fazer login, Cadastrar veículo, Criar corrida, Cancelar corrida, Gerenciar reservas recebidas, Ver histórico de corridas, Avaliar passageiro, Enviar mensagem ao passageiro. \\
+	
+	\textbf{Administrador} & 
+	Gerenciar usuários, Gerenciar corridas, Monitorar avaliações. \\
+	
+\end{longtblr}
 
-\textbf{Casos de Uso:}
-\begin{enumerate}
-	\item O passageiro pode solicitar caronas, gerenciar reservas e avaliar motoristas.
-	\item O motorista pode cadastrar veículos, oferecer corridas e interagir com passageiros.
-	\item  O administrador, por sua vez, possui permissões para gerenciar usuários e monitorar avaliações.
-\end{enumerate} 
+
 
 \section{Tecnologias e Ferramentas}
 
