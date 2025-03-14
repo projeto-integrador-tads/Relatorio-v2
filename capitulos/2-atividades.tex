@@ -1,93 +1,78 @@
 \chapter{ATIVIDADES DESENVOLVIDAS}
 
-Este capítulo apresentará a parte técnica de um produto na forma de software, inicialmente por meio de uma \textit{Application Programming Interface (API)}, posteriormente adaptada com um Front-End, como possível solução da problemática em questão. Na sequência, será abordada sobre a organização do sistema, o escopo do projeto, as questões de armazenamento de dados e as tecnologias escolhidas para o desenvolvimento da aplicação. Ademais, o projeto possui apenas fins educacionais e exemplificativos até o presente momento.
+Este capítulo apresentará a parte técnica de um produto na forma de software denominado como ``VemComigo'', inicialmente por meio de uma \textit{Application Programming Interface (API)}, posteriormente adaptada com um Front-End desenvilvido para aplicações mobile, como possível solução da problemática em questão. Na sequência, será abordada sobre a organização do sistema, o escopo do projeto, as questões de armazenamento de dados e as tecnologias escolhidas para o desenvolvimento da aplicação. Ademais, o projeto possui apenas fins educacionais e exemplificativos até o presente momento.
 
 \section{Escopo do Projeto}
 
-O projeto tem como objetivo facilitar a busca e divulgação de caronas de forma ágil e organizada, melhorando uma prática já existente na região, mas que atualmente é desorganizada e de alcance limitado. Por meio de uma aplicação, será possível uma comunicação mais eficiente entre os usuários, além de oferecer maior segurança e valores competitivos para todos os envolvidos.
+O projeto VemComigo tem como objetivo facilitar a busca e divulgação de caronas de forma ágil e organizada, melhorando uma prática já existente na região, mas que atualmente é desorganizada e de alcance limitado.  A plataforma pode conectar passageiros que necessitam de transporte a motoristas dispostos a oferecer caronas como possível solução. Dessa forma, a aplicação poderá ser um caminho para a comunicação mais eficiente entre os usuários, além de oferecer maior segurança e valores competitivos para todos os envolvidos.
 
 
 \section{Organização Inicial}
 
-Primordialmente, foi fundamental criar uma organização no\textit{ GitHub} para gerenciar futuras atualizações do projeto entre os desenvolvedores, a qual pode ser acessada por meio do link: [https://github.com/projeto-integrador-tads/].
+Primordialmente, para garantir um desenvolvimento estruturado e eficiente, foi fundamental criar uma organização no\textit{ GitHub} para gerenciar futuras atualizações do projeto entre os desenvolvedores, a qual pode ser acessada por meio do link: [https://github.com/projeto-integrador-tads/]. O projeto foi dividido em repositórios bem definidos na organização, abrangendo o back-end e o front-end de maneira separada para uma posterior integração.
 
 \subsection{Requisitos Funcionais}
 
-Na sequência, foi realizado o levantamento dos requisitos técnicos, divididos em funcionais e não funcionais, com o objetivo de identificar os recursos mínimos necessários para o funcionamento inicial da aplicação, bem como visualizar possíveis necessidades futuras, visando garantir um melhor desempenho na versão final. Nesse contexto, as funcionalidades foram definidas na ``Tabela 12'' como requisitos funcionais do sistema e, na ``Tabela 13'', como requisitos não funcionais - responsáveis por descrever as possíveis restrições do sistema até o presente momento, podendo ser implementadas futuramente.
+Na sequência, foi realizado o levantamento dos requisitos técnicos, divididos em funcionais e não funcionais, com o objetivo de identificar os recursos mínimos necessários para o funcionamento inicial da aplicação, bem como visualizar possíveis necessidades futuras, visando garantir um melhor desempenho na versão final. Nesse contexto, as funcionalidades foram definidas na ``Tabela \ref{tab:requisitosrf}'' como requisitos funcionais do sistema, responsáveis por descrever ações que um usuário provavelmente executará dentro da aplicação. Já na ``Tabela \ref{tab:requisitosrnf}'', definem-se os requisitos não funcionais, estes responsáveis por descrever as possíveis qualidades que o sistema deve atender durante o seu funcionamento. 
 
-%Tabela de levantamentos de requisitos Funcionais 
-\begin{longtblr}[,
-	caption = {Tabela de Requisitos Funcionais do Sistema.},
-	label = {tab:requisitos},
+%requisitos funcionais
+\begin{longtblr}[
+	caption = {Requisitos Funcionais},
+	label = {tab:requisitosrf},
+	entry = none,
 	]{
 		width = \linewidth,
-		colspec = {Q[140]Q[160]Q[680]},
+		colspec = {Q[100,c]Q[600]},
 		row{1} = {c},
-		cell{2}{1} = {c},
-		cell{2}{2} = {c},
-		cell{3}{1} = {c},
-		cell{3}{2} = {c},
-		cell{4}{1} = {c},
-		cell{4}{2} = {c},
-		cell{5}{1} = {c},
-		cell{5}{2} = {c},
-		cell{6}{1} = {c},
-		cell{6}{2} = {c},
-		cell{7}{1} = {c},
-		cell{7}{2} = {c},
-		cell{8}{1} = {c},
-		cell{8}{2} = {c},
 		hlines,
 		vlines,
 	}
-	\textbf{Referência} & \textbf{Requisito} & \textbf{Descrição}\\
-	RF01 & Criação de conta & Um novo usuário poderá ser cadastrado informando um nome, e-mail e número de telefone.\\
-	RF02 & Cadastro de veículo & Cadastrar um veículo é o que possibilitará ao usuário oferecer uma carona.\\
-	RF03 & Reserva de carona & Os usuários podem solicitar ou oferecer uma carona. A segunda possibilidade somente será válida para aqueles com algum veículo devidamente registrado na plataforma.\\
-	RF04 & Mensagens & Os interessados na carona poderão trocar mensagens entre si com o objetivo de facilitar o encontro, definir horários e decidir detalhes da viagem.\\
-	RF05 & Filtrar caronas na região & Todos os usuários podem ver as caronas oferecidas na região especificada. Cada anúncio terá informações de destino, hora da viagem, lugares disponíveis e, se aplicável, o valor.\\
-	RF06 & Avaliações & A avaliação ocorrerá entre motorista e passageiro, sendo uma etapa fundamental para garantir a segurança de todos os usuários. Poderá ser atribuída uma mensagem de caráter opinativo para o público e uma nota que varia de 1 a 5.\\
-	RF07 & Serviços de e-mail & Envio de e-mails específicos de notificação após determinadas ações do usuário. Será possível disparar mensagens de boas vindas, criação de corrida bem sucedida, desativação e reativação de conta, entre outras.
-\end{longtblr}
-
-% Tabela requisitos não funcionais 
-% \usepackage{tabularray}
-\begin{longtblr}[,
-	caption = {Requisitos Não Funcionais do Sistema.},
-	label = {tab:requisitos},
-	]{
-		width = \linewidth,
-		colspec = {Q[140]Q[160]Q[680]},
-		row{1} = {c},
-		cell{2}{1} = {c},
-		cell{2}{2} = {c},
-		cell{3}{1} = {c},
-		cell{3}{2} = {c},
-		cell{4}{1} = {c},
-		cell{4}{2} = {c},
-		cell{5}{1} = {c},
-		cell{5}{2} = {c},
-		cell{6}{1} = {c},
-		cell{6}{2} = {c},
-		cell{7}{1} = {c},
-		cell{7}{2} = {c},
-		cell{8}{1} = {c},
-		cell{8}{2} = {c},
-		hlines,
-		vlines,
-	}
-	\textbf{Referência} & \textbf{Requisito} & \textbf{Descrição}\\
-	RNF01 & Verificação de documentos pessoais~ & Validar se os documentos cadastrados na plataforma são válidos.\\
-	RNF02 & Consulta veicular & Consultar se os dados do veículo informados pelo usuário estão cadastrados na base de dados do departamento de trânsito.\\
-	RNF03 & Pesquisa de antecedentes criminais & A funcionalidade poderia aumentar a segurança do usuário.\\
-	RNF04 & Ranking de confiança & Os usuários com a melhor pontuação poderiam ter privilégios de divulgação ao oferecer ou solicitar uma carona.\\
-	RNF05 & Pagamentos & Serviços de pagamento com o objetivo de monetizar a aplicação, além da possibilidade de motoristas lucrarem de forma justa.~\\
-	RNF06 & Mensagens automatizadas & O usuário pode utilizar um recurso de inteligência artificial para gerar mensagens rápidas no chat ao solicitar ou oferecer uma carona.\\
-	RNF07 & Canal de Suporte & Canal dedicado para oferecer suporte para possíveis problemas e esclarecer dúvidas frequentes.
+	\textbf{Referência} & \textbf{Descrição} \\
 	
+	RF01 & O passageiro deve poder criar uma conta no aplicativo. \\
+	RF02 & O motorista deve poder criar uma conta no aplicativo e cadastrar seu veículo. \\
+	RF03 & O passageiro deve poder solicitar uma carona informando local de origem e destino. \\
+	RF04 & O motorista deve poder criar corridas e definir horários de disponibilidade. \\
+	RF05 & O passageiro deve poder visualizar as corridas disponíveis e fazer reservas. \\
+	RF06 & O passageiro e o motorista devem poder cancelar reservas e corridas, respectivamente. \\
+	RF07 & O passageiro deve poder visualizar seu histórico de corridas. \\
+	RF08 & O motorista deve poder visualizar suas corridas concluídas e agendadas. \\
+	RF09 & O passageiro e o motorista devem poder avaliar um ao outro após uma corrida. \\
+	RF10 & O passageiro deve poder gerenciar seus endereços salvos. \\
+	RF11 & O passageiro deve poder enviar mensagens ao motorista e vice-versa pelo chat do aplicativo. \\
+	RF12 & O administrador deve poder gerenciar usuários e motoristas no sistema. \\
+	RF13 & O administrador deve poder monitorar avaliações e interações no aplicativo. \\
+	RF14 & O sistema deve enviar notificações sobre status de corrida, cancelamentos e mensagens. \\
 \end{longtblr}
 
+%requisitos não funcionais
 
+\begin{longtblr}[
+	caption = {Requisitos Não Funcionais},
+	label = {tab:requisitosrnf},
+	entry = none,
+	]{
+		width = \linewidth,
+		colspec = {Q[100,c]Q[600]},
+		row{1} = {c},
+		hlines,
+		vlines,
+	}
+	\textbf{Referência} & \textbf{Descrição} \\
+	
+	RNF01 & O sistema deve utilizar React Native para o desenvolvimento da interface mobile. \\
+	RNF02 & O sistema deve ser compatível com dispositivos Android e iOS. \\
+	RNF03 & O backend deve ser desenvolvido utilizando Node.js com Fastify. \\
+	RNF04 & O banco de dados deve ser gerenciado utilizando PostgreSQL com Prisma ORM. \\
+	RNF05 & O tempo de resposta do sistema para solicitações de corridas deve ser inferior a 2 segundos. \\
+	RNF06 & As senhas dos usuários devem ser armazenadas de forma segura utilizando hashing. \\
+	RNF07 & O sistema deve garantir alta disponibilidade e escalabilidade para suportar múltiplos acessos simultâneos. \\
+	RNF08 & O aplicativo deve seguir boas práticas de acessibilidade, garantindo alto contraste e suporte a leitores de tela. \\
+	RNF09 & O sistema deve garantir que todas as interações do usuário sejam auditáveis para fins de segurança e conformidade com a LGPD. \\ 
+	RNF10 & A interface do usuário deve seguir diretrizes do Material Design e/ou Human Interface Guidelines. \\
+	RNF11 & O aplicativo deve funcionar de forma eficiente em redes móveis 3G, 4G e 5G. \\
+
+\end{longtblr}
 
 % INICIO Critérios de Aceitação
 \subsection{Critérios de Aceitação}
@@ -175,17 +160,19 @@ Para alcançar o objetivo do trabalho, foi desenvolvida uma API que permitirá f
 
 \subsection{Arquitetura do \textit{Back-end}}
 
-Durante a produção de qualquer software é necessário garantir que o sistema seja robusto, eficiente e adaptável às necessidades do usuário. Com essa finalidade existe a arquitetura de sistema, responsável pela estrutura e organização dos componentes de um software, incluindo a maneira como esses elementos interagem entre si e com o ambiente externo. Com a finalidade de seguir os padrões de mercado, definiu-se um conjunto de regras para o \textit{Back-end} aplicando os saberes adquiridos nas matérias de Programação Orientada a Objetos, Programação Web I e Banco de Dados I. A \textit{API} em questão trabalha com o estilo \textit{REST} para comunicação entre os componentes, além de separar as responsabilidades da aplicação em três partes principais, conhecidas como \textit{Model, View e Controller}. A estrutura de pastas pode ser observada na Figura 1:
+Durante a produção de qualquer software é necessário garantir que o sistema seja robusto, eficiente e adaptável às necessidades do usuário. Com essa finalidade existe a arquitetura de sistema, responsável pela estrutura e organização dos componentes de um software, incluindo a maneira como esses elementos interagem entre si e com o ambiente externo. Com a finalidade de seguir os padrões de mercado, definiu-se um conjunto de regras para o \textit{Back-end} aplicando os saberes adquiridos nas matérias de Programação Orientada a Objetos, Programação Web I e Banco de Dados I. A \textit{API} em questão trabalha com o estilo \textit{REST} para comunicação entre os componentes, além de separar as responsabilidades da aplicação em três partes principais, conhecidas como \textit{Model, View e Controller}. A estrutura de pastas pode ser observada na Figura 1.
 % figura 1
-\begin{figure}[h]
+
+\clearpage
+\begin{figure}[p]
 	\centering
 	\caption{Estrutura de Pastas do Projeto.}
-	\includegraphics[scale=0.23]{img/pastas.png}
+	\includegraphics[scale=0.5]{img/pastas.png}
 	\legend{Fonte: Autoria Própria}
 	\label{fig:EstruturaDePastas}
 \end{figure}
 
-
+\clearpage
 
 % INICIO banco de dados
 \subsection{Banco de Dados}
@@ -203,7 +190,7 @@ Após a modelagem do diagrama anterior, foi possível utilizar o BrModelo para r
 
 \subsection{Dicionário de Dados}
 
-O Dicionário de Dados é uma utilizada em projetos acadêmicos e de desenvolvimento de software, pois descreve detalhadamente as tabelas que compõem o banco de dados relacional, bem como seus atributos. Esta seção tem como objetivo proporcionar uma visão clara e organizada da estrutura do banco de dados, listando as entidades e suas respectivas características. No contexto deste trabalho, as principais tabelas incluem Usuários, Endereços, Motoristas, Veículos, Viagens, Reservas, Mensagens e Avaliações. As tabelas de 1 a 11 apresentam as descrições de cada tabela do banco, incluindo suas principais colunas e uma breve explicação dos atributos mais relevantes.
+O Dicionário de Dados é uma utilizada em projetos acadêmicos e de desenvolvimento de software, pois descreve detalhadamente as tabelas que compõem o banco de dados relacional, bem como seus atributos. Esta seção tem como objetivo proporcionar uma visão clara e organizada da estrutura do banco de dados, listando as entidades e suas respectivas características. No contexto deste trabalho, as principais tabelas incluem Usuários, Endereços, Motoristas, Veículos, Viagens, Reservas, Mensagens e Avaliações. As tabelas de 3 a 10 apresentam as descrições de cada tabela do banco, incluindo suas principais colunas e uma breve explicação dos atributos mais relevantes.
 
 % tabela de usuário
 \begin{longtblr}[
@@ -329,7 +316,7 @@ O Dicionário de Dados é uma utilizada em projetos acadêmicos e de desenvolvim
 	entry = none,
 	]{
 		width = \linewidth,
-		colspec = {Q[190]Q[160]Q[620]},
+		colspec = {Q[190,c]Q[160]Q[620]},
 		row{1} = {c},
 		row{2} = {c},
 		cell{1}{1} = {c=3}{0.941\linewidth},
@@ -351,11 +338,11 @@ O Dicionário de Dados é uma utilizada em projetos acadêmicos e de desenvolvim
 	
 	data\_envio           & DATETIME               & Data do envio da mensagem.~                       \\
 	
-	{(FK)\_remetente}     & VARCHAR                & Chave estrangeira, referência à tabela ``usuarios'', representando o usuário que enviou a mensagem.~  \\
+	{(FK)\\remetente}     & VARCHAR                & Chave estrangeira, referência à tabela ``usuarios'', representando o usuário que enviou a mensagem.~  \\
 	
-	{(FK)\_viagens}       & VARCHAR                & Chave estrangeira, referência à tabela ``viagens''.~            \\
+	{(FK)\\viagens}       & VARCHAR                & Chave estrangeira, referência à tabela ``viagens''.~            \\
 	
-	{(FK)\\\_destinatario}  & VARCHAR              & Chave estrangeira, referência à tabela ``usuarios'', representando o usuário que recebeu a mensagem.~
+	{(FK)\\destinatario}  & VARCHAR              & Chave estrangeira, referência à tabela ``usuarios'', representando o usuário que recebeu a mensagem.~
 	                     
 \end{longtblr}
 
@@ -728,15 +715,40 @@ O Dicionário de Dados é uma utilizada em projetos acadêmicos e de desenvolvim
 
 \section{Front-end}
 
-O desenvolvimento do front-end do aplicativo VemComigo foi orientado para proporcionar uma experiência intuitiva e acessível aos usuários. As escolhas durante esta etapa seguem os conhecimentos adquiridos nas aulas de Banco de Dados II, Análise e Projeto de Sistemas, Práticas Profissionais Integradoras II e Desenvolvimento Web II.
+O desenvolvimento do front-end do aplicativo ``VemComigo'' foi orientado para proporcionar uma experiência intuitiva e acessível aos usuários. As escolhas durante esta etapa seguem os conhecimentos adquiridos nas aulas de Banco de Dados II, Análise e Projeto de Sistemas, Práticas Profissionais Integradoras II e Desenvolvimento Web II.
 
-\subsection{Arquitetura do Front-End}
+\subsection{Arquitetura do \textit{Front-End}}
 
-Primeiramente, foi realizada a prototipação das possíveis telas com o auxílio de um projeto criado no Figma, o qual pode ser acessado por meio do link:[https://abrir.link/PMhoA]. Criou-se pastas no projeto com a finalidade de melhor organizar as projeções do visual da aplicação. Os primeiros esboços visuais da aplicação encontram-se na página ``Wireframes''. O desing de alta fidelidade foi projetado na sequência e pode ser encontrado na página ``Desing'' do projeto. Por fim, para integrar a API do back-end desenvolvida anteriormente ao front-end, escolheu-se o React Native como framework do JavaScript, visando a criação de uma aplicação multiplataforma eficiente e de forma paralela para Android e IOS. Foi necessário utilizar o Expo como uma ferramenta auxiliar nos testes das telas desenvolvidas, garantindo que os componentes estivessem bem posicionados na tela.
+Primeiramente, foi realizada a prototipação das possíveis telas com o auxílio de um projeto criado no Figma, o qual pode ser acessado por meio do link:[https://abrir.link/PMhoA]. Para integrar a API do \textit{back-end }desenvolvida anteriormente ao front-end, escolheu-se o React Native como \textit{framework} do \textit{JavaScript}, visando a criação de uma aplicação multiplataforma eficiente e de forma paralela para Android e IOS, reduzindo significativamente o tempo de desenvolvimento. A funcionalidade \textit{Hot Reload} do \textit{framework} permitiu que os desenvolvedores pudessem ver as mudanças no código em tempo real sem precisar recompilar o aplicativo. Por fim, foi necessário utilizar o Expo como uma ferramenta auxiliar nos testes das telas desenvolvidas, garantindo que os componentes estivessem bem posicionados na tela.
 
 \subsection{Design e UX (Experiência do Usuário)}
 
-A interface foi projetada com foco na responsividade, usabilidade e experiência do usuário, permitindo que esses, mesmo que em diferentes dispositivos móveis, tenham uma utilização intuitiva e fluida. O VemComigo é uma aplicação voltada para a mobilidade e deslocamento de pessoas, dito isso, imagina-se que o usuário final busca simplicidade para escolher rapidamente um meio viável de transporte em meio a agitação do dia a dia. Nesse contexto, decidiu-se então que as telas deveriam ser minimalistas de forma que apenas informações necessárias ocupassem espaço na tela, evitando confusões em usuários mais desatentos. A ``tabela \ref{tab:design-ux}'' apresenta as escolhas que compõem o padrão visual da aplicação.
+ Inicialmente criou-se pastas no projeto do Figma com a finalidade de melhor organizar as projeções do visual da aplicação. Os primeiros esboços visuais encontram-se na página ``Wireframes''. Esses representam a interface do aplicativo de forma simplificada, focando na disposição dos elementos sem se preocupar com design visual ou cores. A sua finalidade é definir uma A hierarquia das informações na tela, um possível fluxo de navegação entre as página e a disposição de elementos como botões, formulários e outros componentes interativos. Um exemplo de ``Wireframe'' pode ser observado na ``Figura \ref{fig:wireframe}''.
+
+ \clearpage
+ \begin{figure}[ht]
+ 	\centering
+ 	\begin{minipage}{0.48\textwidth} % Ajuste a largura conforme necessário
+ 		\centering
+ 		\caption{\textit{Wireframe} da Tela inicial}
+ 		\includegraphics[width=\linewidth]{img/wireframe.png}
+ 		\legend{Fonte: Autoria Própria}
+ 		\label{fig:wireframe}
+ 	\end{minipage}
+ 	\hfill % Espaço entre as imagens
+ 	\begin{minipage}{0.48\textwidth}
+ 		\centering
+ 		\caption{Protótipo da Tela inicial}
+ 		\includegraphics[width=\linewidth]{img/prototipo.png}
+ 		\legend{Fonte: Autoria Própria}
+ 		\label{fig:prototipo}
+ 	\end{minipage}
+ \end{figure}
+ \clearpage
+ 
+Paralelamente, a prototipagem é uma evolução do \textit{wireframe}, sendo possível pensar nos elementos como animações, cores e padrões de ícones de forma mais próxima da versão final do aplicativo. Os protótipos do ``VemComigo'' podem ser encontrado na página ``Desing'' do projeto do Figma. O objetivo da prototipagem é identificar e corrigir problemas de navegação, além de garantir uma melhor experiência de uso da interface desenvolvida. A ``Figura \ref{fig:prototipo}'' demonstra como o protótipo definiu um fluxo para atender às necessidades dos passageiros e motoristas de forma clara e eficiente na tela de início.
+
+Sabendo a importância de tal planejamento, a interface dessa aplicação foi projetada com foco na responsividade, usabilidade e experiência do usuário, permitindo que esses, mesmo que em diferentes dispositivos móveis, tenham uma utilização intuitiva e fluida. O ``VemComigo'' é uma aplicação voltada para a mobilidade e deslocamento de pessoas, dito isso, imagina-se que o usuário final busca simplicidade para escolher rapidamente um meio viável de transporte em meio a agitação do dia a dia. Nesse contexto, decidiu-se então que as telas deveriam ser minimalistas de forma que apenas informações necessárias ocupassem espaço na tela, evitando confusões em usuários mais desatentos. A ``tabela \ref{tab:design-ux}'' apresenta as escolhas que compõem o padrão visual da aplicação.
 
 \begin{longtblr}[
 	caption = {Design e UX (Experiência do Usuário)},
@@ -770,9 +782,9 @@ A interface foi projetada com foco na responsividade, usabilidade e experiência
 	\textbf{Paleta de Cores} & Cor principal: \#0064D2 (Azul vibrante) – representa confiança, tecnologia e mobilidade.  
 	Cor de Fundo: \#FFFFFF (Branco) – proporciona um ambiente limpo e moderno, facilitando a leitura e destacando os elementos interativos. Cores secundárias e de apoio: tons de cinza e azul escuro foram utilizados para equilibrar a interface e manter um visual neutro e sofisticado. \\
 	
-	\textbf{Componentes Visuais} & A biblioteca de componentes ``Tamagui'' foi utilizada para melhorar os aspectos visuais e garantir a otimização da aplicação. Adotou-se também uma biblioteca de ícones chamada ``Tabler'', disponível em [https://tabler.io/admin-template]. \\
+	\textbf{Componentes Visuais} & Adotou-se uma biblioteca de ícones chamada ``Tabler'', disponível em [https://tabler.io/admin-template], para uma melhor padronização visual. \\
 	
-	\textbf{Inputs e Formulários} & Os campos de entrada (inputs) foram projetados para serem acessíveis e de fácil identificação. Foram aplicados bordas arredondadas, espaçamento adequado e feedback visual para indicar erros ou sucessos nas interações dos usuários. Os botões seguem um estilo minimalista, utilizando o azul primário (\#0064D2) para submeter ações principais. \\
+	\textbf{Inputs e Formulários} & Os campos de entrada (inputs) foram projetados para serem acessíveis e de fácil identificação. Foram aplicados bordas arredondadas, espaçamento adequado e \textit{feedback} visual para indicar erros ou sucessos nas interações dos usuários. Os botões seguem um estilo minimalista, utilizando o azul primário (\#0064D2) para submeter ações principais. \\
 	
 	\textbf{Logo e Identidade Visual} & O logotipo do aplicativo foi desenvolvido para refletir o conceito de transporte de maneira abstrata. Utilizou-se uma abordagem minimalista, incorporando elementos gráficos que remetem a um formato de uma roda. \\
 	
@@ -782,7 +794,7 @@ A interface foi projetada com foco na responsividade, usabilidade e experiência
 
 \subsection{Componentização}
 
-A adoção da componentização no desenvolvimento do front-end do aplicativo permitiu a criação de uma interface modular, escalável e de fácil manutenção. Utilizando React Native com o auxílio do Tamagui, os componentes foram desenvolvidos de forma reutilizável, garantindo maior consistência visual e reduzindo a duplicação de código. Entre os principais benefícios dessa abordagem observa-se:
+A adoção da componentização no desenvolvimento do \textit{front-end} do aplicativo permitiu a criação de uma interface modular, escalável e de fácil manutenção. Utilizando \textit{React Native}, os componentes foram desenvolvidos de forma reutilizável, garantindo maior consistência visual e reduzindo a duplicação de código. Entre os principais benefícios dessa abordagem observa-se:
 
 \begin{enumerate}
 	\item \textbf{Reutilização de Código:} Componentes como botões e inputs foram desenvolvidos para permitir a sua aplicação em diferentes telas sem necessidade de reescrita.
@@ -792,11 +804,11 @@ A adoção da componentização no desenvolvimento do front-end do aplicativo pe
 
 \subsection{Diagrama de Classes}
 
-O diagrama de classes do VemComigo foi gerado com base no schema do Prisma, refletindo a estrutura dos dados e os relacionamentos entre as entidades da aplicação. Como o projeto utiliza um back-end baseado em Node.js e Prisma ORM, sem a implementação direta de classes, o diagrama representa apenas os modelos de dados, sem a definição de métodos. Entre as principais entidades do sistema, destacam-se Usuário, Veículo, Corrida, Reserva, Endereço e Avaliação, além das tabelas auxiliares como Token e Mensagem. As relações foram modeladas para garantir um fluxo eficiente entre motoristas e passageiros, possibilitando funcionalidades como gerenciamento de corridas, envio de mensagens e sistema de avaliação. Essa estrutura permite a manipulação otimizada dos dados, garantindo escalabilidade e performance na aplicação. O ``Anexo C'' apresenta uma representação gráfica do diagrama de classes.
+O diagrama de classes do VemComigo foi gerado com base no \textit{schema} do Prisma, refletindo a estrutura dos dados e os relacionamentos entre as entidades da aplicação. Como o projeto utiliza um \textit{back-end}baseado em Node.js e Prisma ORM, sem a implementação direta de classes, o diagrama representa apenas os modelos de dados, sem a definição de métodos. Entre as principais entidades do sistema, destacam-se Usuário, Veículo, Corrida, Reserva, Endereço e Avaliação, além das tabelas auxiliares como\textit{Token} e Mensagem. As relações foram modeladas para garantir um fluxo eficiente entre motoristas e passageiros, possibilitando funcionalidades como gerenciamento de corridas, envio de mensagens e sistema de avaliação. Essa estrutura permite a manipulação otimizada dos dados, garantindo escalabilidade e performance na aplicação. O ``Anexo C'' apresenta uma representação gráfica do diagrama de classes.
 
 \subsection{Diagrama de Caso de Uso}
 
-O diagrama de caso de uso do VemComigo representa as interações entre os principais atores do sistema: Passageiro, Motorista e Administrador. Ele ilustra os serviços disponíveis para cada perfil de usuário, destacando funcionalidades como criação de conta, solicitação e gerenciamento de corridas, troca de mensagens entre usuários e sistema de avaliações.  O ``Anexo D'' apresenta uma representação gráfica do diagrama de classes. Em síntese, a ``Tabela \ref{tab:atores-casosdeuso}'' descreve os atores da aplicação e algumas das suas principais ações no sistema.
+O diagrama de caso de uso do ``VemComigo'' representa as interações entre os principais atores do sistema: Passageiro, Motorista e Administrador. Ele ilustra os serviços disponíveis para cada perfil de usuário, destacando funcionalidades como criação de conta, solicitação e gerenciamento de corridas, troca de mensagens entre usuários e sistema de avaliações.  O ``Anexo D'' apresenta uma representação gráfica do diagrama de classes. Em síntese, a ``Tabela \ref{tab:atores-casosdeuso}'' descreve os atores da aplicação e algumas das suas principais ações no sistema.
 
 \begin{longtblr}[
 	caption = {Atores e Casos de Uso do Aplicativo},
@@ -822,8 +834,6 @@ O diagrama de caso de uso do VemComigo representa as interações entre os princ
 	
 \end{longtblr}
 
-
-
 \section{Tecnologias e Ferramentas}
 
 O desenvolvimento de software exige uma variedade de recursos durante a produção. Escolher cuidadosamente as ferramentas a serem utilizadas no ambiente de desenvolvimento garante a qualidade, funcionalidade, eficácia, escalabilidade e eficiência do sistema. Nesse contexto, as tecnologias empregadas durante o desenvolvimento do trabalho serão descritas a seguir. 
@@ -835,7 +845,9 @@ O desenvolvimento de software exige uma variedade de recursos durante a produç�
 	
 	\item \textit{GitHub} -  plataforma de hospedagem de código-fonte que permite o versionamento \textit{Git}. Foi importante para que cada colaborador trabalhasse na implementação das mudanças nos repositórios da organização.
 	
-	\item \textit{Node.js} -  Ferramenta de execução e interpretação da linguagem \textit{JavaScript} que permite o seu uso no ambiente de desenvolvimento, sendo utilizado para executar os códigos criados ao lado do servidor com tal linguagem. 
+	\item \textit{Node.js} -  Ferramenta de execução e interpretação da linguagem \textit{JavaScript} que permite o seu uso no ambiente de desenvolvimento, sendo utilizado para executar os códigos criados ao lado do servidor com tal linguagem.
+	
+	\item \textit{Expo} - Plataforma que simplifica a produção com \textit{React Native}, fornecendo um ambiente de desenvolvimento otimizado, integração com bibliotecas nativas e testes rápidos em dispositivos reais.
 \end{enumerate}
 
 
@@ -851,6 +863,7 @@ O desenvolvimento de software exige uma variedade de recursos durante a produç�
 
 \begin{enumerate}
 	\item\textit{Fastify} - Uma das melhores opções entre os frameworks para \textit{Node.js,} sendo rápido, flexível e com uma excelente experiência de desenvolvimento. Foi utilizado para construir aplicações web escaláveis e de alto desempenho, além de oferecer uma boa integração com o \textit{TypeScript.} 
+	\item \textit{React Native} - \textit{framework} que permitiu a construção do aplicativo de forma nativo para iOS e Android com uma única base de código. Trouxe vantagens na produtividade como garantia de desempenho em ambas as plataformas, disposição de API's de fácil integração e oferta de componentes pré-construídos.
 \end{enumerate}
 
 \subsection{Banco de Dados}
@@ -861,7 +874,7 @@ O desenvolvimento de software exige uma variedade de recursos durante a produç�
 	
 	\item \textit{MySQL} - Sistema Gerenciador de Banco de Dados (SGBD) responsável por armazenar, organizar e gerenciar dados. É conhecido pela confiabilidade e ampla utilização nos mais variados ambientes de desenvolvimento.
 	
-	\item BrModelo -  foi uma ferramenta importante na modelagem do banco de dados, permitindo a elaboração de diagramas entidade-relacionamento (ER) e facilitando a sua visualização antes da implementação da versão final do banco.
+	\item \textit{BrModelo} -  foi uma ferramenta importante na modelagem do banco de dados, permitindo a elaboração de diagramas entidade-relacionamento (ER) e facilitando a sua visualização antes da implementação da versão final do banco.
 	
 \end{enumerate}
 
